@@ -1,8 +1,0 @@
-{
-  "testuser": {
-    "password": "testpass123",
-    "status": "Active",
-    "expiry": "2030-12-31",
-    "connections": 2
-  }
-}
