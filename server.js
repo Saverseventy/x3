@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const CONFIG = {
   username: "myuser123",
   password: "mypass456",
-  serverUrl: "" // Auto-filled by Render
+  serverUrl: "https://x3-bjsd.onrender.com" // Auto-filled by Render
 };
 
 // Auth check middleware
