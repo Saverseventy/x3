@@ -1,69 +1,81 @@
 <?php
-/**
- * Xtream IPTV API — OTT Navigator + All Players Compatible
- * @version 2.2.0
- */
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-function getEnvBool($key, $default = false) {
-    $val = $_ENV[$key] ?? getenv($key);
-    if ($val === false || $val === '') return $default;
-    return filter_var(trim($val), FILTER_VALIDATE_BOOLEAN);
+// ==========================
+// LOGIN & CONFIG
+// ==========================
+$VALID_USER = $_ENV["IPTV_USERNAME"] ?? "admin";
+$VALID_PASS = $_ENV["IPTV_PASSWORD"] ?? "123456";
+$M3U_URL    = $_ENV["M3U_URL"]       ?? "https://m3u.work/AxXzaON";
+$TIMEZONE   = $_ENV["TIMEZONE"]      ?? "Asia/Manila";
+
+date_default_timezone_set($TIMEZONE);
+
+$user      = $_GET["username"] ?? "";
+$pass      = $_GET["password"] ?? "";
+$action    = $_GET["action"]   ?? "";
+$catFilter = $_GET["category_id"] ?? "";
+$force     = isset($_GET["refresh"]) || isset($_GET["m3u_plus"]);
+
+// ==========================
+// AUTHENTICATION
+// ==========================
+if ($user !== $VALID_USER || $pass !== $VALID_PASS) {
+    echo json_encode([
+        "user_info" => ["auth" => 0, "status" => "Disabled", "message" => "Invalid login"]
+    ], JSON_PRETTY_PRINT);
+    exit;
 }
 
-$CFG = [
-    'M3U_URL_WITH_ADULT' => $_ENV['M3U_URL_WITH_ADULT'] ?? 'https://m3u.work/AxXzaON',
-    'M3U_URL_CLEAN'      => $_ENV['M3U_URL_CLEAN']      ?? 'https://m3u.work/AxXzaON',
-    'IPTV_USERNAME'       => $_ENV['IPTV_USERNAME']       ?? 'admin',
-    'IPTV_PASSWORD'       => $_ENV['IPTV_PASSWORD']       ?? 'changeme123',
-    'INCLUDE_ADULT_VOD'   => getEnvBool('INCLUDE_ADULT_VOD', false),
-    'TIMEZONE'            => $_ENV['TIMEZONE']            ?? 'Asia/Manila',
-    'CACHE_TTL'           => (int)($_ENV['CACHE_TTL'] ?? 3600),
+$proto = (!empty($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] !== "off") ||
+         ($_SERVER["HTTP_X_FORWARDED_PROTO"] ?? "") === "https" ? "https" : "http";
+$host  = $_SERVER["HTTP_HOST"] ?? "localhost";
+$base  = "$proto://$host";
+
+$userInfo = [
+    "username"              => $user,
+    "password"              => $pass,
+    "auth"                  => 1,
+    "status"                => "Active",
+    "exp_date"              => 1999999999,
+    "is_trial"              => 0,
+    "active_cons"           => 0,
+    "created_at"            => time(),
+    "max_connections"       => 1,
+    "allowed_output_formats"=> ["m3u8", "ts", "mp4", "mkv"]
 ];
 
-date_default_timezone_set($CFG['TIMEZONE']);
+$serverInfo = [
+    "url"             => parse_url($base, PHP_URL_HOST),
+    "port"            => $proto === "https" ? 443 : 80,
+    "https_port"      => 443,
+    "server_protocol" => $proto,
+    "https"           => ($proto === "https"),
+    "timezone"        => $TIMEZONE,
+    "timestamp_now"   => time(),
+    "time_now"        => date("Y-m-d H:i:s")
+];
 
-// ========== HELPERS ==========
-function channelIdFromName($name) {
-    $hash = crc32($name);
-    $id = sprintf('%u', $hash);
-    return $id % 1000000000;
-}
-
-function authCheck($u, $p, $CFG) {
-    return ($u === $CFG['IPTV_USERNAME'] && $p === $CFG['IPTV_PASSWORD']);
-}
-
-function ensureDir($path) {
-    if (!is_dir($path)) mkdir($path, 0755, true);
-}
-
-function baseUrl() {
-    $proto = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
-             ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https' ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-    $path = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? '/'), '/');
-    return "$proto://$host$path";
-}
-
-// ========== FETCH & PARSE ==========
-function buildPlaylist($CFG) {
-    $srcUrl = $CFG['INCLUDE_ADULT_VOD'] ? $CFG['M3U_URL_WITH_ADULT'] : $CFG['M3U_URL_CLEAN'];
-
+// ==========================
+// FETCH & PARSE M3U DIRECTLY
+// ==========================
+function fetchM3U($url) {
     $ctx = stream_context_create([
-        'http' => [
-            'timeout' => 30,
-            'ignore_errors' => true,
-            'user_agent' => 'Mozilla/5.0 IPTV/1.0',
-            'follow_location' => 1,
+        "http" => [
+            "timeout" => 20,
+            "ignore_errors" => true,
+            "user_agent" => "Mozilla/5.0",
+            "follow_location" => 1,
         ],
     ]);
+    $raw = @file_get_contents($url, false, $ctx);
+    if ($raw === false || trim($raw) === "") return false;
+    return explode("\n", $raw);
+}
 
-    $raw = @file_get_contents($srcUrl, false, $ctx);
-    if ($raw === false || trim($raw) === '') {
-        return ['ok' => false, 'error' => 'Failed fetching source', 'url' => $srcUrl];
-    }
-
-    $lines = explode("\n", $raw);
+function parseM3U($lines) {
     $channels = [];
     $categories = [];
     $catMap = [];
@@ -72,204 +84,145 @@ function buildPlaylist($CFG) {
 
     foreach ($lines as $line) {
         $line = trim($line);
-        if (strpos($line, '#EXTINF:') === 0) {
+        if (strpos($line, "#EXTINF:") === 0) {
             $attr = [];
             if (preg_match_all('/([\w\-]+)\s*=\s*"([^"]*)"/', $line, $m)) {
                 foreach ($m[1] as $i => $k) $attr[$k] = $m[2][$i];
             }
-            $chName = '';
-            if (preg_match('/,(.+)$/', $line, $mm)) $chName = trim($mm[1]);
+            $chName = "";
+            if (preg_match("/,(.+)$/", $line, $mm)) $chName = trim($mm[1]);
 
-            $tvgId   = !empty($attr['tvg-id']) ? $attr['tvg-id'] : (!empty($attr['CUID']) ? $attr['CUID'] : '');
-            $tvgLogo = $attr['tvg-logo'] ?? '';
-            $group   = trim($attr['group-title'] ?? 'Uncategorized');
-            $chNum   = !empty($attr['tvg-chno']) ? (int)$attr['tvg-chno'] : 0;
+            $tvgId   = !empty($attr["tvg-id"]) ? $attr["tvg-id"] : (!empty($attr["CUID"]) ? $attr["CUID"] : "");
+            $tvgLogo = $attr["tvg-logo"] ?? "";
+            $group   = trim($attr["group-title"] ?? "Uncategorized");
 
             if (empty($chName)) continue;
 
             if (!isset($catMap[$group])) {
                 $catMap[$group] = (string)$catId++;
                 $categories[] = [
-                    'category_id'   => (string)$catMap[$group],
-                    'category_name' => $group,
-                    'parent_id'     => '0'
+                    "category_id"   => (string)$catMap[$group],
+                    "category_name" => $group,
+                    "parent_id"     => 0
                 ];
             }
 
-            $streamId = $chNum > 0 ? $chNum : channelIdFromName($chName);
+            // Generate stable stream_id from name
+            $hash = sprintf("%u", crc32($chName));
+            $streamId = $hash % 1000000000;
             while (isset($usedIds[$streamId])) $streamId = ($streamId + 1) % 1000000000;
             $usedIds[$streamId] = true;
 
             $channels[] = [
-                'num'                 => $streamId,
-                'name'                => $chName,
-                'stream_type'         => 'live',
-                'stream_id'           => $streamId,
-                'stream_icon'         => $tvgLogo,
-                'epg_channel_id'      => $tvgId,
-                'added'               => time(),
-                'category_id'         => (string)$catMap[$group],
-                'custom_sid'          => '',
-                'tv_archive'          => 0,
-                'direct_source'       => '',
-                'tv_archive_duration' => 0,
-                'video_url'           => '',
+                "num"                 => $streamId,
+                "name"                => $chName,
+                "stream_type"         => "live",
+                "stream_id"           => $streamId,
+                "stream_icon"         => $tvgLogo,
+                "epg_channel_id"      => $tvgId,
+                "added"               => time(),
+                "category_id"         => (string)$catMap[$group],
+                "custom_sid"          => "",
+                "tv_archive"          => 0,
+                "direct_source"       => "",
+                "tv_archive_duration" => 0,
+                "video_url"           => ""
             ];
-        } elseif ($line && $line[0] !== '#') {
+        } elseif ($line && strpos($line, "#") !== 0) {
             $idx = count($channels) - 1;
             if ($idx >= 0 && !empty($line)) {
-                $channels[$idx]['direct_source'] = $line;
-                $channels[$idx]['video_url']     = $line;
+                $channels[$idx]["direct_source"] = $line;
+                $channels[$idx]["video_url"]     = $line;
             }
         }
     }
 
-    // Filter out channels missing required fields
-    $channels = array_filter($channels, function($c) {
-        return !empty($c['name']) && !empty($c['direct_source']) && !empty($c['stream_id']);
-    });
+    // Remove incomplete entries
+    $channels = array_values(array_filter($channels, fn($c) =>
+        !empty($c["name"]) && !empty($c["direct_source"]) && !empty($c["stream_id"])
+    ));
 
-    // Write cache
-    $base = __DIR__ . '/channels';
-    ensureDir($base);
-    file_put_contents("$base/categories.json", json_encode($categories, JSON_UNESCAPED_UNICODE));
-    file_put_contents("$base/channels.json", json_encode(array_values($channels), JSON_UNESCAPED_UNICODE));
-    file_put_contents("$base/last_build.txt", (string)time());
-
-    return [
-        'ok' => true,
-        'channels' => array_values($channels),
-        'categories' => $categories,
-        'count' => count($channels),
-        'source' => $srcUrl,
-    ];
+    return ["channels" => $channels, "categories" => $categories];
 }
 
-// ========== CACHE ==========
-function loadData($CFG, $force = false) {
-    $base = __DIR__ . '/channels';
-    $catFile = "$base/categories.json";
-    $chFile  = "$base/channels.json";
-    $tsFile  = "$base/last_build.txt";
-
-    if ($force || !is_file($catFile) || !is_file($chFile) || !is_file($tsFile)) {
-        return buildPlaylist($CFG);
+// Load data — fetch fresh or use cache
+$cacheFile = __DIR__ . "/cache.json";
+if ($force || !is_file($cacheFile) || time() - @filemtime($cacheFile) > 3600) {
+    $lines = fetchM3U($M3U_URL);
+    if (!$lines) {
+        $data = file_exists($cacheFile) ? json_decode(file_get_contents($cacheFile), true) : false;
+        if (!$data) {
+            echo json_encode(["error" => "Failed to fetch M3U source"]);
+            exit;
+        }
+    } else {
+        $data = parseM3U($lines);
+        @file_put_contents($cacheFile, json_encode($data));
     }
-
-    $ts = (int)@file_get_contents($tsFile);
-    if ((time() - $ts) > $CFG['CACHE_TTL']) {
-        return buildPlaylist($CFG);
-    }
-
-    return [
-        'ok' => true,
-        'channels'   => json_decode(file_get_contents($chFile), true),
-        'categories' => json_decode(file_get_contents($catFile), true),
-        'count'      => count(json_decode(file_get_contents($chFile), true)),
-        'cached'     => true,
-    ];
+} else {
+    $data = json_decode(file_get_contents($cacheFile), true);
 }
 
-// ========== INPUT ==========
-$action   = $_REQUEST['action']   ?? '';
-$username = $_REQUEST['username'] ?? '';
-$password = $_REQUEST['password'] ?? '';
+$live_channels = $data["channels"];
+$live_cats     = $data["categories"];
 
-// ========== M3U DOWNLOAD ==========
-if ($action === 'm3u' || isset($_GET['m3u'])) {
-    if (!authCheck($username, $password, $CFG)) { http_response_code(403); exit('Unauthorized'); }
-    $data = loadData($CFG);
-    if (!$data['ok']) { http_response_code(502); exit('Source unreachable'); }
-    header('Content-Type: application/vnd.apple.mpegurl; charset=utf-8');
-    echo "#EXTM3U\n";
-    foreach ($data['channels'] as $c) {
-        $logo = $c['stream_icon'] ? ' tvg-logo="' . $c['stream_icon'] . '"' : '';
-        echo "#EXTINF:-1 tvg-id=\"{$c['epg_channel_id']}\"$logo group-title=\"{$c['category_id']}\",{$c['name']}\n{$c['direct_source']}\n";
-    }
-    exit;
+// ==========================
+// API ROUTING
+// ==========================
+switch ($action) {
+    // === LOGIN / ACCOUNT ===
+    case "":
+    case "get":
+    case "get_account_info":
+        echo json_encode([
+            "user_info"   => $userInfo,
+            "server_info" => $serverInfo
+        ], JSON_PRETTY_PRINT);
+        break;
+
+    // === LIVE TV ===
+    case "get_live_categories":
+        echo json_encode($live_cats, JSON_PRETTY_PRINT);
+        break;
+
+    case "get_live_streams":
+        $out = $live_channels;
+        if ($catFilter !== "") {
+            $out = array_values(array_filter($out, fn($i) => (string)$i["category_id"] === (string)$catFilter));
+        }
+        echo json_encode($out, JSON_PRETTY_PRINT);
+        break;
+
+    // === M3U DOWNLOAD ===
+    case "m3u":
+        header("Content-Type: application/vnd.apple.mpegurl");
+        echo "#EXTM3U\n";
+        foreach ($live_channels as $c) {
+            $logo = $c["stream_icon"] ? ' tvg-logo="' . $c["stream_icon"] . '"' : "";
+            echo "#EXTINF:-1 tvg-id=\"{$c["epg_channel_id"]}\"$logo group-title=\"{$c["category_id"]}\",{$c["name"]}\n{$c["direct_source"]}\n";
+        }
+        break;
+
+    // === REFRESH / DEBUG ===
+    case "refresh":
+    case "m3u_plus":
+        echo json_encode([
+            "ok" => true,
+            "count" => count($live_channels),
+            "categories" => count($live_cats),
+            "source" => $M3U_URL,
+            "channels" => $live_channels
+        ], JSON_PRETTY_PRINT);
+        break;
+
+    // === EMPTY HANDLERS FOR COMPATIBILITY ===
+    case "get_vod_categories":
+    case "get_vod_streams":
+    case "get_series_categories":
+    case "get_series":
+        echo json_encode([]);
+        break;
+
+    default:
+        echo json_encode(["status" => "running", "version" => "3.1.0"]);
 }
-
-// ========== REFRESH ==========
-if ($action === 'refresh') {
-    header('Content-Type: application/json');
-    if (!authCheck($username, $password, $CFG)) { http_response_code(401); echo json_encode(['error'=>'Unauthorized']); exit; }
-    echo json_encode(loadData($CFG, true), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// ========== LOGIN / GET — OTT NAVIGATOR SPECIFIC ==========
-if ($action === '' || $action === 'get') {
-    header('Content-Type: application/json; charset=utf-8');
-    if (!authCheck($username, $password, $CFG)) {
-        http_response_code(401);
-        echo json_encode(['user_info' => ['auth' => 0, 'message' => 'Invalid credentials']]);
-        exit;
-    }
-    $urlParts = parse_url(baseUrl());
-    $isHttps = ($urlParts['scheme'] === 'https');
-    echo json_encode([
-        'server_info' => [
-            'url'              => $urlParts['host'],
-            'port'             => $isHttps ? 443 : 80,
-            'https_port'       => 443,
-            'server_protocol'  => $isHttps ? 'https' : 'http',
-            'rtmp_port'        => 0,
-            'timezone'         => $CFG['TIMEZONE'],
-            'process'          => baseUrl() . '/',
-            'version'          => '2.9.0',
-        ],
-        'user_info' => [
-            'username'         => $username,
-            'password'         => $password,
-            'auth'             => 1,
-            'status'           => 'Active',
-            'exp_date'         => 2000000000,
-            'is_trial'         => 0,
-            'active_cons'      => 1,
-            'created_at'        => time(),
-            'max_connections'  => 1,
-        ],
-    ], JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// ========== LIVE CATEGORIES ==========
-if ($action === 'get_live_categories') {
-    header('Content-Type: application/json; charset=utf-8');
-    if (!authCheck($username, $password, $CFG)) { echo json_encode([]); exit; }
-    $d = loadData($CFG);
-    echo json_encode($d['categories'] ?: [], JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// ========== LIVE STREAMS — OTT NAVIGATOR REQUIRES THIS STRUCTURE ==========
-if ($action === 'get_live_streams') {
-    header('Content-Type: application/json; charset=utf-8');
-    if (!authCheck($username, $password, $CFG)) { echo json_encode([]); exit; }
-    $d = loadData($CFG);
-    echo json_encode(array_values($d['channels'] ?: []), JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// ========== ALL OTHER ACTIONS — OTT Navigator calls these ==========
-$empty = [
-    'get_vod_categories','get_vod_streams','get_series_categories','get_series',
-    'get_vod_info','get_series_info','get_episodes','get_short_epg','get_epg_data',
-    'get_live_epg','get_user_info','check_user','get_simple_data','get_epg'
-];
-if (in_array($action, $empty)) {
-    header('Content-Type: application/json; charset=utf-8');
-    if (!authCheck($username, $password, $CFG)) { echo json_encode([]); exit; }
-    echo json_encode([]);
-    exit;
-}
-
-// ========== DEBUG / CLI ==========
-if (php_sapi_name() === 'cli' || isset($_GET['debug'])) {
-    header('Content-Type: application/json');
-    echo json_encode(loadData($CFG, true), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-header('Content-Type: application/json');
-echo json_encode(['status' => 'running', 'version' => '2.2.0']);
