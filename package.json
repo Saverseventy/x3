@@ -16,7 +16,10 @@
   "devDependencies": {
     "nodemon": "^3.1.7"
   },
-  "keywords": ["iptv", "xtream", "server", "streaming"],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": ["iptv", "xtream", "streaming", "server"],
   "author": "",
   "license": "MIT"
 }
