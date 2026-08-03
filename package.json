@@ -1,25 +1,7 @@
 {
-  "name": "xtream-iptv-server",
-  "version": "1.0.0",
-  "description": "Xtream Codes compatible IPTV server with admin panel",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
-  },
-  "dependencies": {
-    "express": "^4.21.0",
-    "cors": "^2.8.5",
-    "body-parser": "^1.20.3",
-    "node-fetch": "^2.7.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "keywords": ["iptv", "xtream", "streaming", "server"],
-  "author": "",
-  "license": "MIT"
+  }
 }
