@@ -1,8 +1,9 @@
 <?php
 /**
  * Xtream IPTV API — Fully Optimized for All IPTV Players
- * @version 2.0.0
+ * @version 2.1.0
  * @deploy Render / PHP 7.4+
+ * @source: https://m3u.work/AxXzaON
  */
 
 // ========== CONFIGURATION — Use Environment Variables (Render Dashboard) ==========
@@ -13,14 +14,13 @@ function getEnvBool($key, $default = false) {
 }
 
 $CFG = [
-    'M3U_URL_WITH_ADULT' => $_ENV['M3U_URL_WITH_ADULT'] ?? 'http://drewlive24.duckdns.org:8081/DrewLive/MergedPlaylist.m3u8',
-    'M3U_URL_CLEAN'      => $_ENV['M3U_URL_CLEAN']      ?? 'http://drewlive24.duckdns.org:8081/DrewLive/MergedCleanPlaylist.m3u8',
+    'M3U_URL_WITH_ADULT' => $_ENV['M3U_URL_WITH_ADULT'] ?? 'https://m3u.work/AxXzaON',
+    'M3U_URL_CLEAN'      => $_ENV['M3U_URL_CLEAN']      ?? 'https://m3u.work/AxXzaON',
     'IPTV_USERNAME'       => $_ENV['IPTV_USERNAME']       ?? 'admin',
     'IPTV_PASSWORD'       => $_ENV['IPTV_PASSWORD']       ?? 'changeme123',
     'INCLUDE_ADULT_VOD'   => getEnvBool('INCLUDE_ADULT_VOD', false),
     'TIMEZONE'            => $_ENV['TIMEZONE']            ?? 'Asia/Manila',
     'CACHE_TTL'           => (int)($_ENV['CACHE_TTL'] ?? 3600), // Refresh cache every hour
-    'API_ALIAS'           => 'iptv', // Optional: /iptv.php alias compatibility
 ];
 
 date_default_timezone_set($CFG['TIMEZONE']);
@@ -54,9 +54,10 @@ function buildPlaylist($CFG) {
 
     $ctx = stream_context_create([
         'http' => [
-            'timeout' => 20,
+            'timeout' => 30,
             'ignore_errors' => true,
-            'user_agent' => 'Mozilla/5.0 IPTV Player',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'follow_location' => 1,
         ],
     ]);
 
@@ -82,8 +83,8 @@ function buildPlaylist($CFG) {
             $chName = '';
             if (preg_match('/,(.+)$/', $line, $mm)) $chName = trim($mm[1]);
 
-            $tvgId   = $attr['tvg-id']      ?? $attr['channel-id'] ?? '';
-            $tvgLogo = $attr['tvg-logo']    ?? '';
+            $tvgId   = $attr['tvg-id'] ?? $attr['CUID'] ?? '';
+            $tvgLogo = $attr['tvg-logo'] ?? '';
             $group   = trim($attr['group-title'] ?? 'General');
             $chNum   = isset($attr['tvg-chno']) ? (int)$attr['tvg-chno'] : 0;
 
@@ -92,9 +93,9 @@ function buildPlaylist($CFG) {
             if (!isset($catMap[$group])) {
                 $catMap[$group] = (string)$catId++;
                 $categories[] = [
-                    'category_id'   => (string)$catMap[$group],
-                    'category_name' => $group,
-                    'parent_id'     => '0'
+                    'category_id'    => (string)$catMap[$group],
+                    'category_name'  => $group,
+                    'parent_id'      => '0'
                 ];
             }
 
@@ -119,7 +120,7 @@ function buildPlaylist($CFG) {
                 'description'         => $attr['tvg-name'] ?? $chName,
                 'group'               => $group,
             ];
-        } elseif ($line && $line[0] !== '#') {
+        } elseif ($line && strpos($line, '#') !== 0) {
             $idx = count($channels) - 1;
             if ($idx >= 0) {
                 $channels[$idx]['direct_source'] = $line;
@@ -151,7 +152,8 @@ function loadData($CFG, $force = false) {
     $chFile  = "$base/channels.json";
     $tsFile  = "$base/last_build.txt";
 
-    if ($force || !is_file($catFile) || !is_file($chFile)) {
+    // Always build if cache missing or forced
+    if ($force || !is_file($catFile) || !is_file($chFile) || !is_file($tsFile)) {
         return buildPlaylist($CFG);
     }
 
@@ -188,7 +190,7 @@ if ($action === 'm3u' || isset($_GET['m3u'])) {
     echo "#EXTM3U\n# Generated: " . date('c') . "\n";
     foreach ($data['channels'] as $c) {
         $logo = $c['stream_icon'] ? ' tvg-logo="' . $c['stream_icon'] . '"' : '';
-        $gid  = ' group-title="' . addslashes($c['group']) . '"';
+        $gid  = ' group-title="' . str_replace('"', '\\"', $c['group']) . '"';
         echo "#EXTINF:-1 tvg-id=\"{$c['epg_channel_id']}\"$logo$gid,{$c['name']}\n";
         echo $c['direct_source'] . "\n";
     }
@@ -203,47 +205,44 @@ if ($action === 'refresh') {
     exit;
 }
 
-// ========== XTREAM: LOGIN / GET ==========
+// ========== XTREAM: LOGIN / GET — ALL PLAYERS COMPATIBLE ==========
 if ($action === '' || $action === 'get') {
     header('Content-Type: application/json; charset=utf-8');
     if (!authCheck($username, $password, $CFG)) {
         http_response_code(401);
-        echo json_encode(['user_info' => ['auth' => 0, 'message' => 'Invalid credentials']]);
+        echo json_encode([
+            'user_info' => ['auth' => 0, 'status' => 'Bad Auth', 'message' => 'Invalid credentials']
+        ]);
         exit;
     }
     $urlParts = parse_url(baseUrl());
     $isHttps = ($urlParts['scheme'] === 'https');
+    $port = $isHttps ? 443 : 80;
+
     echo json_encode([
         'server_info' => [
-            'url'             => $urlParts['host'],
-            'port'            => $isHttps ? 443 : 80,
-            'https_port'      => 443,
-            'server_protocol' => $urlParts['scheme'],
-            'rtmp_port'       => 0,
-            'timezone'        => $CFG['TIMEZONE'],
-            'process'         => baseUrl() . '/',
-            'version'         => '2.9.0',
-            'url'             => $urlParts['host'],
+            'url'              => $urlParts['host'],
+            'port'             => $port,
+            'https_port'       => 443,
+            'server_protocol'  => $isHttps ? 'https' : 'http',
+            'rtmp_port'        => 0,
+            'timezone'         => $CFG['TIMEZONE'],
+            'process'          => baseUrl() . '/',
+            'version'          => '2.9.0',
         ],
         'user_info' => [
-            'username'        => $username,
-            'password'        => $password,
-            'auth'            => 1,
-            'status'          => 'Active',
-            'exp_date'        => 2000000000,
-            'is_trial'        => 0,
-            'active_cons'     => 1,
-            'created_at'       => time(),
-            'max_connections' => 1,
+            'username'         => $username,
+            'password'         => $password,
+            'auth'             => 1,
+            'status'           => 'Active',
+            'exp_date'         => 2000000000,
+            'is_trial'         => 0,
+            'active_cons'      => 1,
+            'created_at'        => time(),
+            'max_connections'  => 1,
             'allowed_output_formats' => ['m3u8', 'ts', 'rtmp'],
         ],
-        'live_streams'       => [],
-        'live_categories'    => [],
-        'vod_categories'     => [],
-        'vod_streams'        => [],
-        'series_categories'  => [],
-        'series'             => [],
-    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    ], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -261,15 +260,16 @@ if ($action === 'get_live_streams') {
     header('Content-Type: application/json; charset=utf-8');
     if (!authCheck($username, $password, $CFG)) { echo json_encode([]); exit; }
     $d = loadData($CFG);
-    echo json_encode($d['channels'] ?? [], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    echo json_encode($d['channels'] ?? [], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// ========== XTREAM: VOD / SERIES — Return Empty (Player Compatibility) ==========
+// ========== XTREAM: ALL OTHER ACTIONS — Return Empty Arrays ==========
 $emptyActions = [
     'get_vod_categories', 'get_vod_streams', 'get_series_categories', 'get_series',
     'get_vod_info', 'get_series_info', 'get_episodes', 'get_short_epg', 'get_simple_data',
-    'get_epg_data', 'get_live_epg', 'get_user_info', 'check_user',
+    'get_epg_data', 'get_live_epg', 'get_user_info', 'check_user', 'get_epg',
+    'create_user', 'delete_user', 'update_user',
 ];
 if (in_array($action, $emptyActions)) {
     header('Content-Type: application/json; charset=utf-8');
@@ -287,4 +287,4 @@ if (php_sapi_name() === 'cli' || isset($_GET['debug'])) {
 
 // ========== FALLBACK ==========
 header('Content-Type: application/json');
-echo json_encode(['status' => 'running', 'api' => 'Xtream IPTV', 'version' => '2.0.0']);
+echo json_encode(['status' => 'running', 'api' => 'Xtream IPTV', 'version' => '2.1.0']);
