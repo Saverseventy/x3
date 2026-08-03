@@ -1,19 +1,14 @@
 {
-  "name": "xtream-iptv-server",
+  "name": "universal-xtream-server",
   "version": "1.0.0",
-  "description": "Xtream Codes v2 compatible IPTV backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.21.0"
   },
   "engines": {
     "node": "20.x"
-  },
-  "keywords": ["iptv", "xtream", "express"],
-  "author": "",
-  "license": "MIT"
+  }
 }
