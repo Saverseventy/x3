@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "username": "demo",
+      "password": "demo",
+      "enabled": true,
+      "exp_date": "2099-12-31T23:59:59.000Z",
+      "max_connections": 1
+    }
+  ],
+  "live_categories": [
+    {
+      "category_id": "1",
+      "category_name": "Live TV",
+      "parent_id": 0
+    }
+  ],
+  "live_streams": [
+    {
+      "stream_id": 1,
+      "name": "Example Live Channel",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://example.com/live.m3u8",
+      "stream_icon": "",
+      "epg_channel_id": "example"
+    }
+  ],
+  "vod_categories": [
+    {
+      "category_id": "1",
+      "category_name": "Movies",
+      "parent_id": 0
+    }
+  ],
+  "vod_streams": [
+    {
+      "stream_id": 1,
+      "name": "Example Movie",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://example.com/movie.m3u8",
+      "stream_icon": "",
+      "container_extension": "m3u8"
+    }
+  ],
+  "series_categories": [
+    {
+      "category_id": "1",
+      "category_name": "Series",
+      "parent_id": 0
+    }
+  ],
+  "series": [],
+  "epg": []
+}
