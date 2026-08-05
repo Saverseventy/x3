@@ -308,6 +308,217 @@
       "parent_id": 0
     }
   ],
-  "series": [],
-  "epg": []
+  "series": [
+    {
+      "series_id": 157041,
+      "name": "Oh My Venus Tagalog Dubbed",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOoCggdm1o6LJ-F2ZuEh4TO4dyFNZg0OynKO8ioNWjJ7Ezb-ZNMQjzNs18&s=10",
+      "plot": "Oh My Venus Tagalog Dubbed",
+      "cast": "",
+      "director": "",
+      "genre": "Drama",
+      "releaseDate": "",
+      "category_id": "1",
+
+      "seasons": [
+        {
+          "season_number": 1,
+          "name": "Season 1",
+          "episode_count": 17
+        }
+      ],
+
+      "episodes": {
+        "1": [
+          {
+            "id": 157041,
+            "episode_num": 1,
+            "title": "Oh My Venus Tagalog Dubbed S01 E01",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 1",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy01%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157042,
+            "episode_num": 2,
+            "title": "Oh My Venus Tagalog Dubbed S01 E02",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 2",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy02%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157043,
+            "episode_num": 3,
+            "title": "Oh My Venus Tagalog Dubbed S01 E03",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 3",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy03%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157044,
+            "episode_num": 4,
+            "title": "Oh My Venus Tagalog Dubbed S01 E04",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 4",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy04%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157045,
+            "episode_num": 5,
+            "title": "Oh My Venus Tagalog Dubbed S01 E05",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 5",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy05%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157046,
+            "episode_num": 6,
+            "title": "Oh My Venus Tagalog Dubbed S01 E06",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 6",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy06%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157047,
+            "episode_num": 7,
+            "title": "Oh My Venus Tagalog Dubbed S01 E07",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 7",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy07%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157048,
+            "episode_num": 8,
+            "title": "Oh My Venus Tagalog Dubbed S01 E08",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 8",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy08%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157049,
+            "episode_num": 9,
+            "title": "Oh My Venus Tagalog Dubbed S01 E09",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 9",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy09%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157050,
+            "episode_num": 10,
+            "title": "Oh My Venus Tagalog Dubbed S01 E10",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 10",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy10%20pt1%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157051,
+            "episode_num": 11,
+            "title": "Oh My Venus Tagalog Dubbed S01 E11",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 11",
+              "duration": ""
+            },
+            "stream_url": "https://ia601409.us.archive.org/24/items/ohmy-01-source/Ohmy10%20pt2%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157052,
+            "episode_num": 12,
+            "title": "Oh My Venus Tagalog Dubbed S01 E12",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 12",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy11%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157053,
+            "episode_num": 13,
+            "title": "Oh My Venus Tagalog Dubbed S01 E13",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 13",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy12%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157054,
+            "episode_num": 14,
+            "title": "Oh My Venus Tagalog Dubbed S01 E14",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 14",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy13%28240p%29.ia.mp4"
+          },
+          {
+            "id": 157055,
+            "episode_num": 15,
+            "title": "Oh My Venus Tagalog Dubbed S01 E15",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 15",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy14%20pt1%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157056,
+            "episode_num": 16,
+            "title": "Oh My Venus Tagalog Dubbed S01 E16",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 16",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy14%20pt2%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157057,
+            "episode_num": 17,
+            "title": "Oh My Venus Tagalog Dubbed S01 E17",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 17",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy15%20finale%28Source%29.ia.mp4"
+          }
+        ]
+      }
+    }
+  ]
 }
