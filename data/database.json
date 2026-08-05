@@ -16,15 +16,159 @@
     }
   ],
   "live_streams": [
-    {
-      "stream_id": 1,
-      "name": "Example Live Channel",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "http://23.237.104.106:8080/USA_STARZ/index.m3u8",
-      "stream_icon": "",
-      "epg_channel_id": "example"
-    }
+  {
+    "stream_id": 1,
+    "name": "ALLTV2 (480p) [Not 24/7]",
+    "category_id": "1",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/alltv/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/LFgDPhN.png",
+    "epg_channel_id": "AllTV.ph@SD"
+  },
+  {
+    "stream_id": 2,
+    "name": "Cartoon Channel PH (720p) [Geo-blocked]",
+    "category_id": "2",
+    "stream_type": "live",
+    "stream_url": "https://stream-cdn-iad3.vaughnsoft.net/play/live_cartoonchannelph.flv",
+    "stream_icon": "https://static-cdn.jtvnw.net/jtv_user_pictures/af449718-cdf7-4357-b308-30edb3ac6eff-profile_image-300x300.png",
+    "epg_channel_id": "CartoonChannelPH.ph@SD"
+  },
+  {
+    "stream_id": 3,
+    "name": "CCTN 47 (1080p) [Not 24/7]",
+    "category_id": "3",
+    "stream_type": "live",
+    "stream_url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
+    "stream_icon": "https://i.imgur.com/IFpAmvW.png",
+    "epg_channel_id": "CCTN47.ph@SD"
+  },
+  {
+    "stream_id": 4,
+    "name": "Cinemo (480p)",
+    "category_id": "4",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/cinemo/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/rGAOD3f.png",
+    "epg_channel_id": "CineMo.ph@SD"
+  },
+  {
+    "stream_id": 5,
+    "name": "CLTV 36 (720p) [Not 24/7]",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
+    "stream_icon": "https://i.imgur.com/IUcTFQ2.png",
+    "epg_channel_id": "CLTV36.ph@SD"
+  },
+  {
+    "stream_id": 6,
+    "name": "FilAmTV Network (1080p)",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://cdn.vegasplus.us/vegas/ftv/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/nRiApdI.png",
+    "epg_channel_id": "FilAmTVNetwork.us@HD"
+  },
+  {
+    "stream_id": 7,
+    "name": "God Stands TV Tagalog",
+    "category_id": "3",
+    "stream_type": "live",
+    "stream_url": "https://online.godstands.tv:5443/WebRTCApp/streams/Tagalog.m3u8",
+    "stream_icon": "https://i.imgur.com/EO6cYUI.png",
+    "epg_channel_id": "GodStandsTV.pk@Tagalog"
+  },
+  {
+    "stream_id": 8,
+    "name": "GTV (480p) [Not 24/7]",
+    "category_id": "6",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/gtv/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/rWhamwh.png",
+    "epg_channel_id": "GTV.ph@SD"
+  },
+  {
+    "stream_id": 9,
+    "name": "IBC 13 (480p) [Not 24/7]",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/ibc_13/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/1KaTUOo.png",
+    "epg_channel_id": "IBC13.ph@SD"
+  },
+  {
+    "stream_id": 10,
+    "name": "Jeepney TV (480p)",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/jeepney/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/RNxfhcc.png",
+    "epg_channel_id": "JeepneyTV.ph@SD"
+  },
+  {
+    "stream_id": 11,
+    "name": "Kapatid TV 5 (480p) [Geo-blocked]",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/kapatid_hd/kapatid.m3u8",
+    "stream_icon": "https://i.imgur.com/xb5lkwG.png",
+    "epg_channel_id": "KapatidTV5.ph@SD"
+  },
+  {
+    "stream_id": 12,
+    "name": "Knowledge Channel (360p)",
+    "category_id": "7",
+    "stream_type": "live",
+    "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/knowledge_channel/knowledge-channel.m3u8",
+    "stream_icon": "https://i.imgur.com/YrmMWXD.png",
+    "epg_channel_id": "KnowledgeChannel.ph@SD"
+  },
+  {
+    "stream_id": 13,
+    "name": "Kool TV (720p)",
+    "category_id": "8",
+    "stream_type": "live",
+    "stream_url": "https://twitch-m3u8.bastypro112.workers.dev/kooltvlive/index.m3u8",
+    "stream_icon": "https://yt3.googleusercontent.com/opqPJfc0Ptd9ohl4R-2hPjaquIAdWuqvRb0T_LBCmfyGznIvfGN0HOlcWZk6Lj2jk11s2Zlk=s1200-c-k-c0x00ffffff-no-rj",
+    "epg_channel_id": "KoolTV.ph@SD"
+  },
+  {
+    "stream_id": 14,
+    "name": "Living Asia Channel (1080p)",
+    "category_id": "9",
+    "stream_type": "live",
+    "stream_url": "https://cdn.vegasplus.us/vegas/lac/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/q3UToRM.png",
+    "epg_channel_id": "LivingAsiaChannel.ph@HD"
+  },
+  {
+    "stream_id": 15,
+    "name": "RPTV (480p) [Not 24/7]",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/rptv/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/ZgSEwq9.png",
+    "epg_channel_id": "RPTV.ph@SD"
+  },
+  {
+    "stream_id": 16,
+    "name": "TV5 (480p) [Not 24/7]",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://streams.comclark.com/pknsd/tv5/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/PYJhTiq.png",
+    "epg_channel_id": "TV5.ph@SD"
+  },
+  {
+    "stream_id": 17,
+    "name": "Vegas Life TV (1080p)",
+    "category_id": "5",
+    "stream_type": "live",
+    "stream_url": "https://cdn.vegasplus.us/vegas/vltv/playlist.m3u8",
+    "stream_icon": "https://i.imgur.com/G7lONcu.png",
+    "epg_channel_id": "VegasLifeTV.us@HD"
+  }
   ],
   "vod_categories": [
     {
