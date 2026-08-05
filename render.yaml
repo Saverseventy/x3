@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: xtream-compatible-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+
+    envVars:
+      - key: ADMIN_KEY
+        generateValue: true
