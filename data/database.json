@@ -178,20 +178,128 @@
   "vod_categories": [
     {
       "category_id": "1",
-      "category_name": "Movies",
+      "category_name": "🎬 New Movies Added",
       "parent_id": 0
     }
   ],
   "vod_streams": [
-    {
-      "stream_id": 1,
-      "name": "Example Movie",
-      "category_id": "1",
-      "stream_type": "movie",
-      "stream_url": "https://example.com/movie.m3u8",
-      "stream_icon": "",
-      "container_extension": "m3u8"
-    }
+  {
+    "stream_id": 61103,
+    "name": "The Furious (2026)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://hls.shegu.net/38381256.m3u8?sign=21a0016bd88cfba8dfe3ab6101610e9ac9b470b3F03&t=1783182114&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92v-TxknNEc-aoWOT4gR2IqW8ZaCCH8He5BfCcLFZ8smTUJJVxPvgR94&s=10",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 61103,
+    "name": "Colony (2026)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://hls.shegu.net/38666566.m3u8?sign=3cd57c3f20a9069fff55b53f17ea27b6d040defeF03&t=1783184482&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
+    "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 61103,
+    "name": "Obsession (2026)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://hls08.cdnvideo11.shop/hls08/13229/Ep1.v129_index.m3u8",
+    "stream_icon": "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 61103,
+    "name": "The Super Mario Galaxy Movie (2026)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt28650488",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61089,
+    "name": "Straw 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://hls13.cdnvideo11.shop/hls13/STRAW-Ep1/index.m3u8?v=39b02eb5-4075-4773-9839-84d7cf81b952",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaiwIETNudF5ZLQx0cumiPhOOgGP22iAPpA&s",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 61092,
+    "name": "The Surrender -(2025)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://1a-1791.com/video/fww1/0b/s8/2/b/i/V/N/biVNy.aaa.mp4",
+    "stream_icon": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS7txPDdKixhcztqpf6qxpwP9sSAnZwPjrwRMz3L-L_7xnKwpZfPvoEzJqqnAfEEWbPTjZWU1GOjoHGPFredoz6uL7oLPh4S3oZHPUcZ78",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61093,
+    "name": "Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle (2025)",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://videodelivery5.site/12193/Ep1_index.m3u8",
+    "stream_icon": "https://dam.mediacorp.sg/image/upload/s--TSyRc0KI--/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2025/03/06/demon_slayer_infinity_castle.png?itok=pXwqu0XX",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 61094,
+    "name": "Superman 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt5950044",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbFIdr8-U2wTcZmlyDGClUdxh0HKyUFM9b7a9vdnZ_3Tj3MYQ6KWf0q2K&s=10",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61095,
+    "name": "Fantastic 4 - 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt10676052",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp5SH6RsqIG7nxz6QcPi0l-jSCB1wN_jh8JghfzFdk9k2fKpajTnwoCSwD&s=10",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61096,
+    "name": "The Conjuring Last Rites 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt22898462",
+    "stream_icon": "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Conjuring_%E2%80%93_Last_Rites.jpg",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61097,
+    "name": "The Elixir 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt32643830",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXXTrN75-Uz9QCCmQF07vm2y6L_1gOXJtxbvmY6Wkw3DZbwEZP_eKPTgQ&s=10",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61098,
+    "name": "The Shadow's Edge 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt34610311",
+    "stream_icon": "https://m.media-amazon.com/images/M/MV5BODM1MTNhMjMtMDYxNS00M2ZkLTkwODMtYzEwNzQ1YTFmYzJkXkEyXkFqcGc@._V1_.jpg",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 61099,
+    "name": "Hostile Takeover 2025",
+    "category_id": "1",
+    "stream_type": "movie",
+    "stream_url": "https://vidmody.com/vs/tt31727397",
+    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
+    "container_extension": "mp4"
+  }
   ],
   "series_categories": [
     {
