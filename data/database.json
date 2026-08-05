@@ -21,7 +21,7 @@
       "name": "Example Live Channel",
       "category_id": "1",
       "stream_type": "live",
-      "stream_url": "https://example.com/live.m3u8",
+      "stream_url": "http://23.237.104.106:8080/USA_STARZ/index.m3u8",
       "stream_icon": "",
       "epg_channel_id": "example"
     }
