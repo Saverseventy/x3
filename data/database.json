@@ -544,6 +544,11 @@
       "category_id": "1",
       "category_name": "🎬 New Movies Added",
       "parent_id": 0
+    },
+    {
+      "category_id": "2",
+      "category_name": "🎬 Tagalog Dubbed",
+      "parent_id": 0
     }
   ],
 
