@@ -1,503 +1,960 @@
+"use strict";
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3000;
-const ADMIN_KEY = process.env.ADMIN_KEY || "change-this-admin-key";
+/* =========================================================
+   CONFIG
+========================================================= */
+
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = "0.0.0.0";
+
+const ADMIN_KEY =
+  process.env.ADMIN_KEY || "change-this-admin-key";
 
 const DATA_DIR = path.join(__dirname, "data");
 const DB_FILE = path.join(DATA_DIR, "database.json");
 
-if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-}
+/* =========================================================
+   EXPRESS
+========================================================= */
 
-const defaultDB = {
-    users: [
-        {
-            username: "demo",
-            password: "demo",
-            enabled: true,
-            exp_date: "2099-12-31T23:59:59.000Z",
-            max_connections: 1
-        }
-    ],
+app.disable("x-powered-by");
 
-    live_categories: [
-        {
-            category_id: "1",
-            category_name: "Live TV",
-            parent_id: 0
-        }
-    ],
+app.set("trust proxy", true);
 
-    live_streams: [
-        {
-            stream_id: 1,
-            name: "Example Live Channel",
-            category_id: "1",
-            stream_type: "live",
-            stream_url: "http://23.237.104.106:8080/USA_STARZ/index.m3u8",
-            stream_icon: "",
-            epg_channel_id: "example"
-        }
-    ],
+app.use(
+  express.json({
+    limit: "2mb"
+  })
+);
 
-    vod_categories: [
-        {
-            category_id: "1",
-            category_name: "Movies",
-            parent_id: 0
-        }
-    ],
+app.use(
+  express.urlencoded({
+    extended: true,
+    limit: "2mb"
+  })
+);
 
-    vod_streams: [
-        {
-            stream_id: 1,
-            name: "Example Movie",
-            category_id: "1",
-            stream_type: "movie",
-            stream_url: "https://example.com/movie.m3u8",
-            stream_icon: "",
-            container_extension: "m3u8"
-        }
-    ],
+/* =========================================================
+   DATABASE
+========================================================= */
 
-    series_categories: [
-        {
-            category_id: "1",
-            category_name: "Series",
-            parent_id: 0
-        }
-    ],
+const EMPTY_DATABASE = {
+  users: [],
 
-    series: [],
+  live_categories: [],
+  live_streams: [],
 
-    epg: []
+  vod_categories: [],
+  vod_streams: [],
+
+  series_categories: [],
+  series: [],
+
+  epg: []
 };
 
-function ensureDB() {
-    if (!fs.existsSync(DB_FILE)) {
-        fs.writeFileSync(
-            DB_FILE,
-            JSON.stringify(defaultDB, null, 2)
-        );
-    }
-}
+function ensureDatabase() {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, {
+      recursive: true
+    });
+  }
 
-function loadDB() {
-    ensureDB();
-
-    try {
-        return JSON.parse(
-            fs.readFileSync(DB_FILE, "utf8")
-        );
-    } catch (err) {
-        console.error("Database read error:", err);
-        return JSON.parse(JSON.stringify(defaultDB));
-    }
-}
-
-function saveDB(db) {
+  if (!fs.existsSync(DB_FILE)) {
     fs.writeFileSync(
-        DB_FILE,
-        JSON.stringify(db, null, 2)
+      DB_FILE,
+      JSON.stringify(
+        EMPTY_DATABASE,
+        null,
+        2
+      ),
+      "utf8"
     );
+  }
 }
 
-function getBaseURL(req) {
-    const forwardedProto = req.headers["x-forwarded-proto"];
+function loadDatabase() {
+  ensureDatabase();
 
-    const protocol =
-        forwardedProto ||
-        req.protocol ||
-        "http";
-
-    return `${protocol}://${req.get("host")}`;
-}
-
-function findUser(username, password) {
-    const db = loadDB();
-
-    return db.users.find(
-        user =>
-            String(user.username) === String(username) &&
-            String(user.password) === String(password)
+  try {
+    const raw = fs.readFileSync(
+      DB_FILE,
+      "utf8"
     );
-}
 
-function userIsValid(user) {
-    if (!user) return false;
-    if (user.enabled === false) return false;
-
-    if (user.exp_date) {
-        const expiration = new Date(user.exp_date);
-
-        if (
-            !Number.isNaN(expiration.getTime()) &&
-            expiration.getTime() < Date.now()
-        ) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-function authenticate(req, res) {
-    const username = req.query.username;
-    const password = req.query.password;
-
-    if (!username || !password) {
-        res.status(401).json({
-            user_info: {
-                auth: 0,
-                status: "Disabled",
-                message: "Username and password are required"
-            }
-        });
-
-        return null;
-    }
-
-    const user = findUser(username, password);
-
-    if (!userIsValid(user)) {
-        res.status(401).json({
-            user_info: {
-                auth: 0,
-                status: "Disabled",
-                message: "Invalid username/password or expired account"
-            }
-        });
-
-        return null;
-    }
-
-    return user;
-}
-
-function userInfo(user) {
-    const expiration = user.exp_date
-        ? Math.floor(new Date(user.exp_date).getTime() / 1000)
-        : 0;
+    const db = JSON.parse(raw);
 
     return {
-        username: user.username,
-        password: user.password,
-        message: "Welcome",
-        auth: 1,
-        status: "Active",
-        exp_date: String(expiration),
-        is_trial: "0",
-        active_cons: "0",
-        created_at: String(
-            Math.floor(Date.now() / 1000)
-        ),
-        max_connections: String(
-            user.max_connections || 1
-        ),
-        allowed_output_formats: [
-            "m3u8",
-            "ts"
-        ]
-    };
-}
+      ...EMPTY_DATABASE,
+      ...db,
 
-function serverInfo(req) {
-    const base = getBaseURL(req);
+      users: Array.isArray(db.users)
+        ? db.users
+        : [],
+
+      live_categories:
+        Array.isArray(db.live_categories)
+          ? db.live_categories
+          : [],
+
+      live_streams:
+        Array.isArray(db.live_streams)
+          ? db.live_streams
+          : [],
+
+      vod_categories:
+        Array.isArray(db.vod_categories)
+          ? db.vod_categories
+          : [],
+
+      vod_streams:
+        Array.isArray(db.vod_streams)
+          ? db.vod_streams
+          : [],
+
+      series_categories:
+        Array.isArray(db.series_categories)
+          ? db.series_categories
+          : [],
+
+      series:
+        Array.isArray(db.series)
+          ? db.series
+          : [],
+
+      epg:
+        Array.isArray(db.epg)
+          ? db.epg
+          : []
+    };
+  } catch (error) {
+    console.error(
+      "Database error:",
+      error.message
+    );
 
     return {
-        url: base,
-        port: String(PORT),
-        https_port: String(PORT),
-        server_protocol: req.protocol,
-        rtmp_port: "0",
-        timezone: "UTC",
-        timestamp_now: Math.floor(Date.now() / 1000),
-        time_now: new Date().toISOString()
+      ...EMPTY_DATABASE
     };
+  }
 }
 
-function categoryFilter(items, categoryId) {
+let db = loadDatabase();
+
+function saveDatabase() {
+  const temporaryFile =
+    `${DB_FILE}.tmp`;
+
+  fs.writeFileSync(
+    temporaryFile,
+    JSON.stringify(
+      db,
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  fs.renameSync(
+    temporaryFile,
+    DB_FILE
+  );
+}
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function clean(value) {
+  return String(
+    value ?? ""
+  ).trim();
+}
+
+function numericId(value) {
+  const number = Number(value);
+
+  return Number.isFinite(number)
+    ? number
+    : null;
+}
+
+function findById(list, id, key = "stream_id") {
+  const wanted = clean(id);
+
+  return list.find(
+    item =>
+      clean(item[key]) === wanted
+  );
+}
+
+function categoryFilter(
+  list,
+  categoryId
+) {
+  const category = clean(
+    categoryId
+  );
+
+  if (!category) {
+    return list;
+  }
+
+  return list.filter(
+    item =>
+      clean(item.category_id) ===
+      category
+  );
+}
+
+function escapeXml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function getBaseUrl(req) {
+  const protocol =
+    req.headers["x-forwarded-proto"] ||
+    req.protocol ||
+    "http";
+
+  return `${protocol}://${req.get("host")}`;
+}
+
+function getExtension(stream) {
+  return clean(
+    stream.container_extension
+  ).replace(/^\./, "") || "m3u8";
+}
+
+/* =========================================================
+   USER / AUTH
+========================================================= */
+
+function findUser(
+  username,
+  password
+) {
+  const u = clean(username);
+  const p = clean(password);
+
+  return db.users.find(
+    user =>
+      clean(user.username) === u &&
+      clean(user.password) === p
+  );
+}
+
+function isUserActive(user) {
+  if (!user) {
+    return false;
+  }
+
+  if (user.enabled === false) {
+    return false;
+  }
+
+  if (user.exp_date) {
+    const expiration =
+      new Date(user.exp_date);
+
     if (
-        categoryId === undefined ||
-        categoryId === null ||
-        categoryId === ""
+      !Number.isNaN(
+        expiration.getTime()
+      ) &&
+      expiration.getTime() <
+        Date.now()
     ) {
-        return items;
+      return false;
     }
+  }
 
-    return items.filter(
-        item =>
-            String(item.category_id) === String(categoryId)
-    );
+  return true;
 }
 
-/*
-|--------------------------------------------------------------------------
-| Health
-|--------------------------------------------------------------------------
-*/
+function authenticateQuery(
+  req,
+  res
+) {
+  const username =
+    req.query.username;
 
-app.get("/", (req, res) => {
-    res.json({
-        status: "online",
-        service: "Xtream-compatible API",
-        version: "1.0.0"
+  const password =
+    req.query.password;
+
+  if (
+    !username ||
+    !password
+  ) {
+    res.status(401).json({
+      user_info: {
+        auth: 0,
+        status: "Disabled",
+        message:
+          "Username and password required"
+      }
     });
-});
 
-app.get("/health", (req, res) => {
-    res.json({
-        status: "ok"
+    return null;
+  }
+
+  const user = findUser(
+    username,
+    password
+  );
+
+  if (!isUserActive(user)) {
+    res.status(401).json({
+      user_info: {
+        auth: 0,
+        status: "Disabled",
+        message:
+          "Invalid or expired account"
+      }
     });
-});
 
-/*
-|--------------------------------------------------------------------------
-| Xtream Player API
-|--------------------------------------------------------------------------
-*/
+    return null;
+  }
 
-app.get("/player_api.php", (req, res) => {
-    const username = req.query.username;
-    const password = req.query.password;
-    const action = req.query.action;
+  return user;
+}
 
-    const user = authenticate(req, res);
+function authenticatePath(
+  req,
+  res
+) {
+  const username =
+    req.params.username;
 
-    if (!user) return;
+  const password =
+    req.params.password;
 
-    const db = loadDB();
+  const user = findUser(
+    username,
+    password
+  );
+
+  if (!isUserActive(user)) {
+    res.status(401).send(
+      "Unauthorized"
+    );
+
+    return null;
+  }
+
+  return user;
+}
+
+function unixExpiration(user) {
+  if (!user.exp_date) {
+    return "0";
+  }
+
+  const date =
+    new Date(user.exp_date);
+
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
+    return "0";
+  }
+
+  return String(
+    Math.floor(
+      date.getTime() / 1000
+    )
+  );
+}
+
+function buildUserInfo(user) {
+  return {
+    username: user.username,
+    password: user.password,
+    message: "Welcome",
+    auth: 1,
+    status: "Active",
+
+    exp_date:
+      unixExpiration(user),
+
+    is_trial: "0",
+
+    active_cons:
+      String(
+        user.active_cons || 0
+      ),
+
+    created_at:
+      String(
+        user.created_at || 0
+      ),
+
+    max_connections:
+      String(
+        user.max_connections || 1
+      ),
+
+    allowed_output_formats: [
+      "m3u8",
+      "ts",
+      "mp4"
+    ]
+  };
+}
+
+/* =========================================================
+   SERVER INFO
+========================================================= */
+
+function buildServerInfo(req) {
+  const base =
+    getBaseUrl(req);
+
+  return {
+    url: base,
+
+    port: String(PORT),
+
+    https_port:
+      req.secure
+        ? String(PORT)
+        : String(PORT),
+
+    server_protocol:
+      req.secure
+        ? "https"
+        : "http",
+
+    rtmp_port: "0",
+
+    timezone:
+      process.env.TZ ||
+      "UTC",
+
+    timestamp_now:
+      Math.floor(
+        Date.now() / 1000
+      ),
+
+    time_now:
+      new Date().toISOString()
+  };
+}
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+app.get(
+  "/player_api.php",
+  (req, res) => {
+    const user =
+      authenticateQuery(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    const action =
+      clean(req.query.action);
 
     /*
-     * Login request
+     * Standard login
      */
 
     if (!action) {
-        return res.json({
-            user_info: userInfo(user),
-            server_info: serverInfo(req)
-        });
+      return res.json({
+        user_info:
+          buildUserInfo(user),
+
+        server_info:
+          buildServerInfo(req)
+      });
     }
 
-    /*
-     * Live categories
-     */
-
-    if (action === "get_live_categories") {
-        return res.json(db.live_categories);
-    }
-
-    /*
-     * Live streams
-     */
-
-    if (action === "get_live_streams") {
-        const streams = categoryFilter(
-            db.live_streams,
-            req.query.category_id
-        );
-
-        return res.json(
-            streams.map(stream => ({
-                num: stream.stream_id,
-                name: stream.name,
-                stream_type: "live",
-                stream_id: stream.stream_id,
-                stream_icon: stream.stream_icon || "",
-                epg_channel_id:
-                    stream.epg_channel_id || "",
-                added: stream.added || "",
-                category_id: String(
-                    stream.category_id || "0"
-                ),
-                tv_archive: 0,
-                direct_source:
-                    stream.stream_url || "",
-                tv_archive_duration: 0
-            }))
-        );
-    }
-
-    /*
-     * VOD categories
-     */
-
-    if (action === "get_vod_categories") {
-        return res.json(db.vod_categories);
-    }
-
-    /*
-     * VOD streams
-     */
-
-    if (action === "get_vod_streams") {
-        const streams = categoryFilter(
-            db.vod_streams,
-            req.query.category_id
-        );
-
-        return res.json(
-            streams.map(stream => ({
-                num: stream.stream_id,
-                name: stream.name,
-                stream_type: "movie",
-                stream_id: stream.stream_id,
-                stream_icon: stream.stream_icon || "",
-                rating: stream.rating || "0",
-                rating_5based: stream.rating_5based || "0",
-                added: stream.added || "",
-                category_id: String(
-                    stream.category_id || "0"
-                ),
-                container_extension:
-                    stream.container_extension || "m3u8",
-                custom_sid: "",
-                direct_source:
-                    stream.stream_url || ""
-            }))
-        );
-    }
-
-    /*
-     * VOD information
-     */
-
-    if (action === "get_vod_info") {
-        const streamId = String(
-            req.query.vod_id || ""
-        );
-
-        const stream = db.vod_streams.find(
-            item =>
-                String(item.stream_id) === streamId
-        );
-
-        if (!stream) {
-            return res.json({
-                info: {},
-                movie_data: {}
-            });
-        }
-
-        return res.json({
-            info: {
-                name: stream.name,
-                movie_image:
-                    stream.stream_icon || "",
-                rating:
-                    stream.rating || "0",
-                genre:
-                    stream.genre || "",
-                plot:
-                    stream.plot || "",
-                cast:
-                    stream.cast || "",
-                director:
-                    stream.director || "",
-                releasedate:
-                    stream.releasedate || "",
-                duration_secs:
-                    stream.duration_secs || 0,
-                duration:
-                    stream.duration || "",
-                container_extension:
-                    stream.container_extension || "m3u8"
-            },
-
-            movie_data: {
-                stream_id: stream.stream_id,
-                name: stream.name,
-                added: stream.added || "",
-                category_id:
-                    stream.category_id || "0",
-                container_extension:
-                    stream.container_extension || "m3u8"
-            }
-        });
-    }
-
-    /*
-     * Series categories
-     */
-
-    if (action === "get_series_categories") {
-        return res.json(db.series_categories);
-    }
-
-    /*
-     * Series
-     */
-
-    if (action === "get_series") {
-        const categoryId =
-            req.query.category_id;
-
-        let series = db.series || [];
-
-        if (categoryId) {
-            series = series.filter(
-                item =>
-                    String(item.category_id) ===
-                    String(categoryId)
-            );
-        }
-
-        return res.json(series);
-    }
-
-    /*
-     * Series information
-     */
-
-    if (action === "get_series_info") {
-        const seriesId =
-            req.query.series_id;
-
-        const item = (db.series || []).find(
-            series =>
-                String(series.series_id) ===
-                String(seriesId)
-        );
-
-        if (!item) {
-            return res.json({
-                seasons: [],
-                episodes: {}
-            });
-        }
-
-        return res.json({
-            seasons: item.seasons || [],
-            episodes: item.episodes || {}
-        });
-    }
-
-    /*
-     * EPG
-     */
+    /* =====================================================
+       LIVE CATEGORIES
+    ===================================================== */
 
     if (
-        action === "get_short_epg" ||
-        action === "get_simple_data_table"
+      action ===
+      "get_live_categories"
     ) {
-        const streamId =
-            req.query.stream_id;
+      return res.json(
+        db.live_categories
+      );
+    }
 
-        const epg = (db.epg || []).filter(
-            item =>
-                !streamId ||
-                String(item.stream_id) ===
-                String(streamId)
+    /* =====================================================
+       LIVE STREAMS
+    ===================================================== */
+
+    if (
+      action ===
+      "get_live_streams"
+    ) {
+      const streams =
+        categoryFilter(
+          db.live_streams,
+          req.query.category_id
         );
 
-        return res.json(epg);
+      const output =
+        streams.map(
+          (stream, index) => ({
+            num:
+              Number(
+                stream.stream_id
+              ) || index + 1,
+
+            name:
+              stream.name || "",
+
+            stream_type:
+              "live",
+
+            stream_id:
+              Number(
+                stream.stream_id
+              ) || index + 1,
+
+            stream_icon:
+              stream.stream_icon || "",
+
+            epg_channel_id:
+              stream.epg_channel_id ||
+              "",
+
+            added:
+              stream.added || "",
+
+            category_id:
+              clean(
+                stream.category_id
+              ),
+
+            tv_archive: 0,
+
+            direct_source:
+              stream.stream_url ||
+              "",
+
+            tv_archive_duration: 0
+          })
+        );
+
+      return res.json(output);
+    }
+
+    /* =====================================================
+       VOD CATEGORIES
+    ===================================================== */
+
+    if (
+      action ===
+      "get_vod_categories"
+    ) {
+      return res.json(
+        db.vod_categories
+      );
+    }
+
+    /* =====================================================
+       VOD STREAMS
+    ===================================================== */
+
+    if (
+      action ===
+      "get_vod_streams"
+    ) {
+      const streams =
+        categoryFilter(
+          db.vod_streams,
+          req.query.category_id
+        );
+
+      const output =
+        streams.map(
+          (stream, index) => ({
+            num:
+              Number(
+                stream.stream_id
+              ) || index + 1,
+
+            name:
+              stream.name || "",
+
+            stream_type:
+              "movie",
+
+            stream_id:
+              Number(
+                stream.stream_id
+              ) || index + 1,
+
+            stream_icon:
+              stream.stream_icon ||
+              "",
+
+            rating:
+              stream.rating ||
+              "0",
+
+            rating_5based:
+              stream.rating_5based ||
+              "0",
+
+            added:
+              stream.added ||
+              "",
+
+            category_id:
+              clean(
+                stream.category_id
+              ),
+
+            container_extension:
+              getExtension(stream),
+
+            custom_sid: "",
+
+            direct_source:
+              stream.stream_url ||
+              ""
+          })
+        );
+
+      return res.json(output);
+    }
+
+    /* =====================================================
+       VOD INFO
+    ===================================================== */
+
+    if (
+      action ===
+      "get_vod_info"
+    ) {
+      const stream =
+        findById(
+          db.vod_streams,
+          req.query.vod_id
+        );
+
+      if (!stream) {
+        return res.json({
+          info: {},
+          movie_data: {}
+        });
+      }
+
+      return res.json({
+        info: {
+          name:
+            stream.name || "",
+
+          movie_image:
+            stream.stream_icon ||
+            "",
+
+          rating:
+            stream.rating ||
+            "0",
+
+          genre:
+            stream.genre ||
+            "",
+
+          plot:
+            stream.plot ||
+            "",
+
+          cast:
+            stream.cast ||
+            "",
+
+          director:
+            stream.director ||
+            "",
+
+          releasedate:
+            stream.releasedate ||
+            stream.releaseDate ||
+            "",
+
+          duration_secs:
+            stream.duration_secs ||
+            0,
+
+          duration:
+            stream.duration ||
+            "",
+
+          container_extension:
+            getExtension(stream)
+        },
+
+        movie_data: {
+          stream_id:
+            Number(
+              stream.stream_id
+            ),
+
+          name:
+            stream.name || "",
+
+          added:
+            stream.added ||
+            "",
+
+          category_id:
+            clean(
+              stream.category_id
+            ),
+
+          container_extension:
+            getExtension(stream)
+        }
+      });
+    }
+
+    /* =====================================================
+       SERIES CATEGORIES
+    ===================================================== */
+
+    if (
+      action ===
+      "get_series_categories"
+    ) {
+      return res.json(
+        db.series_categories
+      );
+    }
+
+    /* =====================================================
+       SERIES LIST
+    ===================================================== */
+
+    if (
+      action === "get_series"
+    ) {
+      let series =
+        db.series;
+
+      if (
+        req.query.category_id
+      ) {
+        series =
+          series.filter(
+            item =>
+              clean(
+                item.category_id
+              ) ===
+              clean(
+                req.query.category_id
+              )
+          );
+      }
+
+      const output =
+        series.map(
+          item => ({
+            num:
+              Number(
+                item.series_id
+              ),
+
+            name:
+              item.name || "",
+
+            series_id:
+              Number(
+                item.series_id
+              ),
+
+            cover:
+              item.cover || "",
+
+            plot:
+              item.plot || "",
+
+            cast:
+              item.cast || "",
+
+            director:
+              item.director || "",
+
+            genre:
+              item.genre || "",
+
+            releaseDate:
+              item.releaseDate ||
+              item.releasedate ||
+              "",
+
+            category_id:
+              clean(
+                item.category_id
+              ),
+
+            last_modified:
+              item.last_modified ||
+              "",
+
+            rating:
+              item.rating ||
+              "0",
+
+            rating_5based:
+              item.rating_5based ||
+              "0",
+
+            backdrop_path:
+              item.backdrop_path ||
+              [],
+
+            youtube_trailer:
+              item.youtube_trailer ||
+              "",
+
+            episode_run_time:
+              item.episode_run_time ||
+              0,
+
+            seasons:
+              item.seasons || []
+          })
+        );
+
+      return res.json(output);
+    }
+
+    /* =====================================================
+       SERIES INFO
+    ===================================================== */
+
+    if (
+      action ===
+      "get_series_info"
+    ) {
+      const series =
+        findById(
+          db.series,
+          req.query.series_id,
+          "series_id"
+        );
+
+      if (!series) {
+        return res.json({
+          seasons: [],
+          episodes: {}
+        });
+      }
+
+      return res.json({
+        seasons:
+          series.seasons || [],
+
+        episodes:
+          normalizeEpisodes(
+            series
+          ),
+
+        info: {
+          name:
+            series.name || "",
+
+          cover:
+            series.cover || "",
+
+          plot:
+            series.plot || "",
+
+          cast:
+            series.cast || "",
+
+          director:
+            series.director || "",
+
+          genre:
+            series.genre || "",
+
+          releaseDate:
+            series.releaseDate ||
+            series.releasedate ||
+            "",
+
+          category_id:
+            clean(
+              series.category_id
+            ),
+
+          rating:
+            series.rating ||
+            "0"
+        }
+      });
+    }
+
+    /* =====================================================
+       SHORT EPG
+    ===================================================== */
+
+    if (
+      action ===
+        "get_short_epg" ||
+      action ===
+        "get_simple_data_table"
+    ) {
+      let epg =
+        db.epg;
+
+      if (
+        req.query.stream_id
+      ) {
+        epg =
+          epg.filter(
+            item =>
+              clean(
+                item.stream_id
+              ) ===
+              clean(
+                req.query.stream_id
+              )
+          );
+      }
+
+      const limit =
+        Number(
+          req.query.limit
+        ) || 0;
+
+      if (
+        limit > 0
+      ) {
+        epg =
+          epg.slice(
+            0,
+            limit
+          );
+      }
+
+      return res.json(epg);
     }
 
     /*
@@ -505,457 +962,1510 @@ app.get("/player_api.php", (req, res) => {
      */
 
     return res.json({});
-});
-
-/*
-|--------------------------------------------------------------------------
-| M3U Playlist
-|--------------------------------------------------------------------------
-*/
-
-app.get("/get.php", (req, res) => {
-    const user = authenticate(req, res);
-
-    if (!user) return;
-
-    const db = loadDB();
-    const base = getBaseURL(req);
-
-    let output = "#EXTM3U\n";
-
-    for (const stream of db.live_streams) {
-        const streamURL =
-            `${base}/live/${encodeURIComponent(user.username)}/${encodeURIComponent(user.password)}/${stream.stream_id}.m3u8`;
-
-        output +=
-            `#EXTINF:-1 tvg-id="${stream.epg_channel_id || ""}" tvg-name="${stream.name}" tvg-logo="${stream.stream_icon || ""}" group-title="${stream.category_id || "Live TV"}",${stream.name}\n`;
-
-        output += `${streamURL}\n`;
-    }
-
-    for (const stream of db.vod_streams) {
-        const ext =
-            stream.container_extension || "m3u8";
-
-        const streamURL =
-            `${base}/movie/${encodeURIComponent(user.username)}/${encodeURIComponent(user.password)}/${stream.stream_id}.${ext}`;
-
-        output +=
-            `#EXTINF:-1 tvg-name="${stream.name}" tvg-logo="${stream.stream_icon || ""}" group-title="Movies",${stream.name}\n`;
-
-        output += `${streamURL}\n`;
-    }
-
-    res.setHeader(
-        "Content-Type",
-        "audio/x-mpegurl"
-    );
-
-    res.send(output);
-});
-
-/*
-|--------------------------------------------------------------------------
-| XMLTV / EPG
-|--------------------------------------------------------------------------
-*/
-
-app.get("/xmltv.php", (req, res) => {
-    const user = authenticate(req, res);
-
-    if (!user) return;
-
-    const db = loadDB();
-
-    let xml =
-        `<?xml version="1.0" encoding="UTF-8"?>\n` +
-        `<tv generator-info-name="Xtream Compatible Server">\n`;
-
-    const streams = db.live_streams || [];
-
-    for (const stream of streams) {
-        const id =
-            stream.epg_channel_id ||
-            String(stream.stream_id);
-
-        xml +=
-            `  <channel id="${escapeXML(id)}">\n` +
-            `    <display-name>${escapeXML(stream.name)}</display-name>\n` +
-            `  </channel>\n`;
-    }
-
-    for (const program of db.epg || []) {
-        const stream =
-            streams.find(
-                item =>
-                    String(item.stream_id) ===
-                    String(program.stream_id)
-            );
-
-        if (!stream) continue;
-
-        const channel =
-            stream.epg_channel_id ||
-            String(stream.stream_id);
-
-        xml +=
-            `  <programme start="${escapeXML(program.start || "")}" stop="${escapeXML(program.stop || "")}" channel="${escapeXML(channel)}">\n` +
-            `    <title>${escapeXML(program.title || "")}</title>\n` +
-            `    <desc>${escapeXML(program.description || "")}</desc>\n` +
-            `  </programme>\n`;
-    }
-
-    xml += "</tv>";
-
-    res.setHeader(
-        "Content-Type",
-        "application/xml"
-    );
-
-    res.send(xml);
-});
-
-/*
-|--------------------------------------------------------------------------
-| Stream routes
-|--------------------------------------------------------------------------
-|
-| These redirect the player to the authorized source URL.
-|
-*/
-
-app.get(
-    "/live/:username/:password/:streamId.m3u8",
-    streamHandler
+  }
 );
 
-app.get(
-    "/live/:username/:password/:streamId.ts",
-    streamHandler
-);
+/* =========================================================
+   SERIES NORMALIZATION
+========================================================= */
+
+function normalizeEpisodes(
+  series
+) {
+  const result = {};
+
+  const seasons =
+    series.episodes || {};
+
+  for (
+    const [seasonNumber, episodes]
+    of Object.entries(seasons)
+  ) {
+    result[seasonNumber] =
+      Array.isArray(episodes)
+        ? episodes.map(
+            episode => ({
+              id:
+                Number(
+                  episode.id
+                ),
+
+              episode_num:
+                Number(
+                  episode.episode_num
+                ),
+
+              title:
+                episode.title ||
+                "",
+
+              container_extension:
+                episode.container_extension ||
+                "mp4",
+
+              info:
+                episode.info || {},
+
+              custom_sid:
+                episode.custom_sid ||
+                "",
+
+              added:
+                episode.added ||
+                "",
+
+              season:
+                Number(
+                  seasonNumber
+                ),
+
+              direct_source:
+                episode.stream_url ||
+                ""
+            })
+          )
+        : [];
+  }
+
+  return result;
+}
+
+/* =========================================================
+   M3U
+========================================================= */
 
 app.get(
-    "/movie/:username/:password/:streamId.:extension",
-    streamHandler
-);
+  "/get.php",
+  (req, res) => {
+    const user =
+      authenticateQuery(
+        req,
+        res
+      );
 
-async function streamHandler(req, res) {
-    const {
-        username,
-        password,
-        streamId
-    } = req.params;
+    if (!user) {
+      return;
+    }
 
-    const user = findUser(
-        username,
-        password
-    );
+    const base =
+      getBaseUrl(req);
 
-    if (!userIsValid(user)) {
-        return res.status(401).send(
-            "Unauthorized"
+    const lines = [
+      "#EXTM3U"
+    ];
+
+    /*
+     * LIVE
+     */
+
+    for (
+      const stream
+      of db.live_streams
+    ) {
+      const id =
+        Number(
+          stream.stream_id
         );
-    }
 
-    const db = loadDB();
+      const url =
+        `${base}/live/${encodeURIComponent(
+          user.username
+        )}/${encodeURIComponent(
+          user.password
+        )}/${id}.m3u8`;
 
-    const isMovie =
-        req.path.startsWith("/movie/");
+      lines.push(
+        `#EXTINF:-1 tvg-id="${escapeM3u(
+          stream.epg_channel_id || ""
+        )}" tvg-name="${escapeM3u(
+          stream.name || ""
+        )}" tvg-logo="${escapeM3u(
+          stream.stream_icon || ""
+        )}" group-title="${escapeM3u(
+          getCategoryName(
+            db.live_categories,
+            stream.category_id
+          )
+        )}",${escapeM3u(
+          stream.name || ""
+        )}`
+      );
 
-    const list =
-        isMovie
-            ? db.vod_streams
-            : db.live_streams;
-
-    const stream = list.find(
-        item =>
-            String(item.stream_id) ===
-            String(streamId)
-    );
-
-    if (!stream || !stream.stream_url) {
-        return res.status(404).send(
-            "Stream not found"
-        );
+      lines.push(url);
     }
 
     /*
-     * Redirect to the source supplied in your database.
+     * MOVIES
      */
 
-    return res.redirect(
-        302,
-        stream.stream_url
-    );
-}
-
-/*
-|--------------------------------------------------------------------------
-| Admin authentication
-|--------------------------------------------------------------------------
-*/
-
-function admin(req, res, next) {
-    const key =
-        req.headers["x-admin-key"] ||
-        req.query.admin_key;
-
-    if (
-        !key ||
-        key !== ADMIN_KEY
+    for (
+      const stream
+      of db.vod_streams
     ) {
-        return res.status(403).json({
-            error: "Invalid admin key"
-        });
-    }
-
-    next();
-}
-
-/*
-|--------------------------------------------------------------------------
-| Admin - database
-|--------------------------------------------------------------------------
-*/
-
-app.get(
-    "/admin/database",
-    admin,
-    (req, res) => {
-        res.json(loadDB());
-    }
-);
-
-/*
-|--------------------------------------------------------------------------
-| Admin - create user
-|--------------------------------------------------------------------------
-*/
-
-app.post(
-    "/admin/users",
-    admin,
-    (req, res) => {
-        const {
-            username,
-            password,
-            exp_date,
-            max_connections
-        } = req.body;
-
-        if (!username || !password) {
-            return res.status(400).json({
-                error:
-                    "username and password required"
-            });
-        }
-
-        const db = loadDB();
-
-        if (
-            db.users.some(
-                u =>
-                    u.username === username
-            )
-        ) {
-            return res.status(409).json({
-                error:
-                    "Username already exists"
-            });
-        }
-
-        const user = {
-            username,
-            password,
-            enabled: true,
-            exp_date:
-                exp_date ||
-                "2099-12-31T23:59:59.000Z",
-            max_connections:
-                Number(max_connections) || 1
-        };
-
-        db.users.push(user);
-
-        saveDB(db);
-
-        res.json({
-            success: true,
-            user
-        });
-    }
-);
-
-/*
-|--------------------------------------------------------------------------
-| Admin - add live stream
-|--------------------------------------------------------------------------
-*/
-
-app.post(
-    "/admin/live",
-    admin,
-    (req, res) => {
-        const db = loadDB();
-
-        const stream = {
-            stream_id:
-                Number(req.body.stream_id) ||
-                Date.now(),
-
-            name:
-                req.body.name ||
-                "Unnamed Channel",
-
-            category_id:
-                String(
-                    req.body.category_id || "1"
-                ),
-
-            stream_type: "live",
-
-            stream_url:
-                req.body.stream_url || "",
-
-            stream_icon:
-                req.body.stream_icon || "",
-
-            epg_channel_id:
-                req.body.epg_channel_id || ""
-        };
-
-        db.live_streams.push(stream);
-
-        saveDB(db);
-
-        res.json({
-            success: true,
-            stream
-        });
-    }
-);
-
-/*
-|--------------------------------------------------------------------------
-| Admin - add VOD
-|--------------------------------------------------------------------------
-*/
-
-app.post(
-    "/admin/vod",
-    admin,
-    (req, res) => {
-        const db = loadDB();
-
-        const stream = {
-            stream_id:
-                Number(req.body.stream_id) ||
-                Date.now(),
-
-            name:
-                req.body.name ||
-                "Unnamed Movie",
-
-            category_id:
-                String(
-                    req.body.category_id || "1"
-                ),
-
-            stream_type: "movie",
-
-            stream_url:
-                req.body.stream_url || "",
-
-            stream_icon:
-                req.body.stream_icon || "",
-
-            container_extension:
-                req.body.container_extension ||
-                "m3u8",
-
-            rating:
-                req.body.rating || "0",
-
-            genre:
-                req.body.genre || "",
-
-            plot:
-                req.body.plot || ""
-        };
-
-        db.vod_streams.push(stream);
-
-        saveDB(db);
-
-        res.json({
-            success: true,
-            stream
-        });
-    }
-);
-
-/*
-|--------------------------------------------------------------------------
-| Admin - add category
-|--------------------------------------------------------------------------
-*/
-
-app.post(
-    "/admin/live-category",
-    admin,
-    (req, res) => {
-        const db = loadDB();
-
-        const category = {
-            category_id:
-                String(
-                    req.body.category_id ||
-                    Date.now()
-                ),
-
-            category_name:
-                req.body.category_name ||
-                "Live TV",
-
-            parent_id: 0
-        };
-
-        db.live_categories.push(
-            category
+      const id =
+        Number(
+          stream.stream_id
         );
 
-        saveDB(db);
+      const ext =
+        getExtension(stream);
 
-        res.json({
-            success: true,
-            category
-        });
+      const url =
+        `${base}/movie/${encodeURIComponent(
+          user.username
+        )}/${encodeURIComponent(
+          user.password
+        )}/${id}.${ext}`;
+
+      lines.push(
+        `#EXTINF:-1 tvg-name="${escapeM3u(
+          stream.name || ""
+        )}" tvg-logo="${escapeM3u(
+          stream.stream_icon || ""
+        )}" group-title="${escapeM3u(
+          getCategoryName(
+            db.vod_categories,
+            stream.category_id
+          )
+        )}",${escapeM3u(
+          stream.name || ""
+        )}`
+      );
+
+      lines.push(url);
     }
+
+    /*
+     * SERIES
+     */
+
+    for (
+      const series
+      of db.series
+    ) {
+      const seasons =
+        series.episodes || {};
+
+      for (
+        const [
+          seasonNumber,
+          episodes
+        ]
+        of Object.entries(seasons)
+      ) {
+        if (
+          !Array.isArray(
+            episodes
+          )
+        ) {
+          continue;
+        }
+
+        for (
+          const episode
+          of episodes
+        ) {
+          const ext =
+            clean(
+              episode.container_extension
+            ) || "mp4";
+
+          const episodeId =
+            Number(
+              episode.id
+            );
+
+          const url =
+            `${base}/series/${encodeURIComponent(
+              user.username
+            )}/${encodeURIComponent(
+              user.password
+            )}/${episodeId}.${ext}`;
+
+          lines.push(
+            `#EXTINF:-1 tvg-name="${escapeM3u(
+              episode.title || ""
+            )}" tvg-logo="${escapeM3u(
+              series.cover || ""
+            )}" group-title="${escapeM3u(
+              series.name || ""
+            )} - Season ${escapeM3u(
+              seasonNumber
+            )}",${escapeM3u(
+              episode.title || ""
+            )}`
+          );
+
+          lines.push(url);
+        }
+      }
+    }
+
+    res.setHeader(
+      "Content-Type",
+      "application/x-mpegURL"
+    );
+
+    res.setHeader(
+      "Content-Disposition",
+      'inline; filename="playlist.m3u"'
+    );
+
+    res.send(
+      lines.join("\n") +
+      "\n"
+    );
+  }
 );
 
-/*
-|--------------------------------------------------------------------------
-| XML escaping
-|--------------------------------------------------------------------------
-*/
+/* =========================================================
+   XMLTV
+========================================================= */
 
-function escapeXML(value) {
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&apos;");
+app.get(
+  "/xmltv.php",
+  (req, res) => {
+    const user =
+      authenticateQuery(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    let xml =
+      '<?xml version="1.0" encoding="UTF-8"?>\n';
+
+    xml +=
+      '<tv generator-info-name="Xtream Compatible Server">\n';
+
+    /*
+     * CHANNELS
+     */
+
+    for (
+      const channel
+      of db.live_streams
+    ) {
+      const channelId =
+        channel.epg_channel_id ||
+        String(
+          channel.stream_id
+        );
+
+      xml +=
+        `  <channel id="${escapeXml(
+          channelId
+        )}">\n`;
+
+      xml +=
+        `    <display-name>${escapeXml(
+          channel.name
+        )}</display-name>\n`;
+
+      if (
+        channel.stream_icon
+      ) {
+        xml +=
+          `    <icon src="${escapeXml(
+            channel.stream_icon
+          )}"/>\n`;
+      }
+
+      xml +=
+        "  </channel>\n";
+    }
+
+    /*
+     * PROGRAMS
+     */
+
+    for (
+      const program
+      of db.epg
+    ) {
+      const stream =
+        findById(
+          db.live_streams,
+          program.stream_id
+        );
+
+      if (!stream) {
+        continue;
+      }
+
+      const channelId =
+        stream.epg_channel_id ||
+        String(
+          stream.stream_id
+        );
+
+      xml +=
+        `  <programme start="${escapeXml(
+          program.start || ""
+        )}" stop="${escapeXml(
+          program.stop || ""
+        )}" channel="${escapeXml(
+          channelId
+        )}">\n`;
+
+      xml +=
+        `    <title>${escapeXml(
+          program.title || ""
+        )}</title>\n`;
+
+      if (
+        program.description
+      ) {
+        xml +=
+          `    <desc>${escapeXml(
+            program.description
+          )}</desc>\n`;
+      }
+
+      xml +=
+        "  </programme>\n";
+    }
+
+    xml +=
+      "</tv>\n";
+
+    res.setHeader(
+      "Content-Type",
+      "application/xml; charset=utf-8"
+    );
+
+    res.send(xml);
+  }
+);
+
+/* =========================================================
+   PLAYBACK - LIVE
+========================================================= */
+
+app.get(
+  "/live/:username/:password/:streamId.:extension",
+  async (req, res) => {
+    const user =
+      authenticatePath(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    const stream =
+      findById(
+        db.live_streams,
+        req.params.streamId
+      );
+
+    if (
+      !stream ||
+      !stream.stream_url
+    ) {
+      return res.status(404).send(
+        "Live stream not found"
+      );
+    }
+
+    return redirectStream(
+      res,
+      stream.stream_url
+    );
+  }
+);
+
+/* =========================================================
+   PLAYBACK - MOVIE
+========================================================= */
+
+app.get(
+  "/movie/:username/:password/:streamId.:extension",
+  async (req, res) => {
+    const user =
+      authenticatePath(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    const stream =
+      findById(
+        db.vod_streams,
+        req.params.streamId
+      );
+
+    if (
+      !stream ||
+      !stream.stream_url
+    ) {
+      return res.status(404).send(
+        "Movie not found"
+      );
+    }
+
+    return redirectStream(
+      res,
+      stream.stream_url
+    );
+  }
+);
+
+/* =========================================================
+   PLAYBACK - SERIES
+========================================================= */
+
+app.get(
+  "/series/:username/:password/:episodeId.:extension",
+  async (req, res) => {
+    const user =
+      authenticatePath(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    const episode =
+      findEpisode(
+        req.params.episodeId
+      );
+
+    if (
+      !episode ||
+      !episode.stream_url
+    ) {
+      return res.status(404).send(
+        "Episode not found"
+      );
+    }
+
+    return redirectStream(
+      res,
+      episode.stream_url
+    );
+  }
+);
+
+/* =========================================================
+   OPTIONAL DIRECT EPISODE ROUTE
+========================================================= */
+
+app.get(
+  "/episode/:username/:password/:episodeId.:extension",
+  async (req, res) => {
+    const user =
+      authenticatePath(
+        req,
+        res
+      );
+
+    if (!user) {
+      return;
+    }
+
+    const episode =
+      findEpisode(
+        req.params.episodeId
+      );
+
+    if (
+      !episode ||
+      !episode.stream_url
+    ) {
+      return res.status(404).send(
+        "Episode not found"
+      );
+    }
+
+    return redirectStream(
+      res,
+      episode.stream_url
+    );
+  }
+);
+
+/* =========================================================
+   FIND SERIES EPISODE
+========================================================= */
+
+function findEpisode(
+  episodeId
+) {
+  const wanted =
+    clean(episodeId);
+
+  for (
+    const series
+    of db.series
+  ) {
+    const seasons =
+      series.episodes || {};
+
+    for (
+      const episodes
+      of Object.values(
+        seasons
+      )
+    ) {
+      if (
+        !Array.isArray(
+          episodes
+        )
+      ) {
+        continue;
+      }
+
+      const episode =
+        episodes.find(
+          item =>
+            clean(
+              item.id
+            ) === wanted
+        );
+
+      if (episode) {
+        return episode;
+      }
+    }
+  }
+
+  return null;
 }
 
-/*
-|--------------------------------------------------------------------------
-| Start
-|--------------------------------------------------------------------------
-*/
+/* =========================================================
+   STREAM REDIRECT
+========================================================= */
 
-app.listen(PORT, () => {
-    console.log(
-        `Xtream-compatible server running on port ${PORT}`
+function redirectStream(
+  res,
+  url
+) {
+  try {
+    const parsed =
+      new URL(url);
+
+    if (
+      parsed.protocol !==
+        "http:" &&
+      parsed.protocol !==
+        "https:"
+    ) {
+      return res.status(400).send(
+        "Unsupported stream protocol"
+      );
+    }
+
+    return res.redirect(
+      302,
+      url
     );
-});
+  } catch {
+    return res.status(400).send(
+      "Invalid stream URL"
+    );
+  }
+}
+
+/* =========================================================
+   CATEGORY NAME
+========================================================= */
+
+function getCategoryName(
+  categories,
+  categoryId
+) {
+  const category =
+    categories.find(
+      item =>
+        clean(
+          item.category_id
+        ) ===
+        clean(categoryId)
+    );
+
+  return (
+    category?.category_name ||
+    "Uncategorized"
+  );
+}
+
+/* =========================================================
+   M3U ESCAPE
+========================================================= */
+
+function escapeM3u(value) {
+  return String(value ?? "")
+    .replace(/"/g, "'")
+    .replace(/\r?\n/g, " ")
+    .trim();
+}
+
+/* =========================================================
+   ADMIN AUTH
+========================================================= */
+
+function adminAuth(
+  req,
+  res,
+  next
+) {
+  const supplied =
+    req.headers[
+      "x-admin-key"
+    ] ||
+    req.query.admin_key;
+
+  if (
+    !supplied ||
+    supplied !== ADMIN_KEY
+  ) {
+    return res.status(403).json({
+      error:
+        "Invalid admin key"
+    });
+  }
+
+  next();
+}
+
+/* =========================================================
+   ADMIN DATABASE
+========================================================= */
+
+app.get(
+  "/admin/database",
+  adminAuth,
+  (req, res) => {
+    res.json(db);
+  }
+);
+
+/* =========================================================
+   ADMIN RELOAD
+========================================================= */
+
+app.post(
+  "/admin/reload",
+  adminAuth,
+  (req, res) => {
+    db =
+      loadDatabase();
+
+    res.json({
+      success: true,
+      message:
+        "Database reloaded"
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN SAVE
+========================================================= */
+
+app.post(
+  "/admin/save",
+  adminAuth,
+  (req, res) => {
+    try {
+      if (
+        !req.body ||
+        typeof req.body !==
+          "object"
+      ) {
+        return res.status(400).json({
+          error:
+            "Invalid database object"
+        });
+      }
+
+      db = {
+        ...EMPTY_DATABASE,
+        ...req.body
+      };
+
+      saveDatabase();
+
+      res.json({
+        success: true
+      });
+    } catch (error) {
+      res.status(500).json({
+        error:
+          error.message
+      });
+    }
+  }
+);
+
+/* =========================================================
+   ADMIN ADD USER
+========================================================= */
+
+app.post(
+  "/admin/users",
+  adminAuth,
+  (req, res) => {
+    const username =
+      clean(
+        req.body.username
+      );
+
+    const password =
+      clean(
+        req.body.password
+      );
+
+    if (
+      !username ||
+      !password
+    ) {
+      return res.status(400).json({
+        error:
+          "username and password required"
+      });
+    }
+
+    if (
+      db.users.some(
+        user =>
+          clean(
+            user.username
+          ) === username
+      )
+    ) {
+      return res.status(409).json({
+        error:
+          "Username already exists"
+      });
+    }
+
+    const user = {
+      username,
+      password,
+
+      enabled:
+        req.body.enabled !==
+        false,
+
+      exp_date:
+        req.body.exp_date ||
+        "2099-12-31T23:59:59.000Z",
+
+      max_connections:
+        Number(
+          req.body.max_connections
+        ) || 1,
+
+      created_at:
+        Math.floor(
+          Date.now() / 1000
+        )
+    };
+
+    db.users.push(user);
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      user
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN ADD LIVE STREAM
+========================================================= */
+
+app.post(
+  "/admin/live",
+  adminAuth,
+  (req, res) => {
+    const streamId =
+      numericId(
+        req.body.stream_id
+      ) ??
+      nextId(
+        db.live_streams
+      );
+
+    const stream = {
+      stream_id: streamId,
+
+      name:
+        clean(
+          req.body.name
+        ) ||
+        "Unnamed Channel",
+
+      category_id:
+        clean(
+          req.body.category_id
+        ) || "1",
+
+      stream_type:
+        "live",
+
+      stream_url:
+        clean(
+          req.body.stream_url
+        ),
+
+      stream_icon:
+        clean(
+          req.body.stream_icon
+        ),
+
+      epg_channel_id:
+        clean(
+          req.body.epg_channel_id
+        )
+    };
+
+    if (!stream.stream_url) {
+      return res.status(400).json({
+        error:
+          "stream_url required"
+      });
+    }
+
+    db.live_streams.push(
+      stream
+    );
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      stream
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN ADD MOVIE
+========================================================= */
+
+app.post(
+  "/admin/vod",
+  adminAuth,
+  (req, res) => {
+    const streamId =
+      numericId(
+        req.body.stream_id
+      ) ??
+      nextId(
+        db.vod_streams
+      );
+
+    const stream = {
+      stream_id: streamId,
+
+      name:
+        clean(
+          req.body.name
+        ) ||
+        "Unnamed Movie",
+
+      category_id:
+        clean(
+          req.body.category_id
+        ) || "1",
+
+      stream_type:
+        "movie",
+
+      stream_url:
+        clean(
+          req.body.stream_url
+        ),
+
+      stream_icon:
+        clean(
+          req.body.stream_icon
+        ),
+
+      container_extension:
+        clean(
+          req.body.container_extension
+        ) || "m3u8",
+
+      rating:
+        clean(
+          req.body.rating
+        ) || "0",
+
+      genre:
+        clean(
+          req.body.genre
+        ),
+
+      plot:
+        clean(
+          req.body.plot
+        )
+    };
+
+    if (!stream.stream_url) {
+      return res.status(400).json({
+        error:
+          "stream_url required"
+      });
+    }
+
+    db.vod_streams.push(
+      stream
+    );
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      stream
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN ADD SERIES
+========================================================= */
+
+app.post(
+  "/admin/series",
+  adminAuth,
+  (req, res) => {
+    const seriesId =
+      numericId(
+        req.body.series_id
+      ) ??
+      nextId(
+        db.series,
+        "series_id"
+      );
+
+    const series = {
+      series_id: seriesId,
+
+      name:
+        clean(
+          req.body.name
+        ) ||
+        "Unnamed Series",
+
+      cover:
+        clean(
+          req.body.cover
+        ),
+
+      plot:
+        clean(
+          req.body.plot
+        ),
+
+      cast:
+        clean(
+          req.body.cast
+        ),
+
+      director:
+        clean(
+          req.body.director
+        ),
+
+      genre:
+        clean(
+          req.body.genre
+        ),
+
+      releaseDate:
+        clean(
+          req.body.releaseDate
+        ),
+
+      category_id:
+        clean(
+          req.body.category_id
+        ) || "1",
+
+      seasons:
+        Array.isArray(
+          req.body.seasons
+        )
+          ? req.body.seasons
+          : [],
+
+      episodes:
+        req.body.episodes &&
+        typeof req.body.episodes ===
+          "object"
+          ? req.body.episodes
+          : {}
+    };
+
+    db.series.push(
+      series
+    );
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      series
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN ADD SERIES EPISODE
+========================================================= */
+
+app.post(
+  "/admin/series/:seriesId/episode",
+  adminAuth,
+  (req, res) => {
+    const series =
+      findById(
+        db.series,
+        req.params.seriesId,
+        "series_id"
+      );
+
+    if (!series) {
+      return res.status(404).json({
+        error:
+          "Series not found"
+      });
+    }
+
+    const season =
+      String(
+        req.body.season_number || 1
+      );
+
+    if (
+      !series.episodes ||
+      typeof series.episodes !==
+        "object"
+    ) {
+      series.episodes = {};
+    }
+
+    if (
+      !Array.isArray(
+        series.episodes[season]
+      )
+    ) {
+      series.episodes[season] =
+        [];
+    }
+
+    const episodeId =
+      numericId(
+        req.body.id
+      ) ??
+      nextEpisodeId();
+
+    const episode = {
+      id: episodeId,
+
+      episode_num:
+        Number(
+          req.body.episode_num
+        ) ||
+        series.episodes[
+          season
+        ].length + 1,
+
+      title:
+        clean(
+          req.body.title
+        ) ||
+        `Episode ${
+          series.episodes[
+            season
+          ].length + 1
+        }`,
+
+      container_extension:
+        clean(
+          req.body.container_extension
+        ) || "mp4",
+
+      info:
+        req.body.info || {},
+
+      stream_url:
+        clean(
+          req.body.stream_url
+        )
+    };
+
+    if (!episode.stream_url) {
+      return res.status(400).json({
+        error:
+          "stream_url required"
+      });
+    }
+
+    series.episodes[
+      season
+    ].push(episode);
+
+    /*
+     * Keep season metadata synchronized.
+     */
+
+    if (
+      !Array.isArray(
+        series.seasons
+      )
+    ) {
+      series.seasons = [];
+    }
+
+    let seasonInfo =
+      series.seasons.find(
+        item =>
+          Number(
+            item.season_number
+          ) ===
+          Number(season)
+      );
+
+    if (!seasonInfo) {
+      seasonInfo = {
+        season_number:
+          Number(season),
+
+        name:
+          `Season ${season}`,
+
+        episode_count: 0
+      };
+
+      series.seasons.push(
+        seasonInfo
+      );
+    }
+
+    seasonInfo.episode_count =
+      series.episodes[
+        season
+      ].length;
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      episode
+    });
+  }
+);
+
+/* =========================================================
+   ADMIN CATEGORY
+========================================================= */
+
+app.post(
+  "/admin/category",
+  adminAuth,
+  (req, res) => {
+    const type =
+      clean(
+        req.body.type
+      );
+
+    const category = {
+      category_id:
+        clean(
+          req.body.category_id
+        ) ||
+        String(
+          Date.now()
+        ),
+
+      category_name:
+        clean(
+          req.body.category_name
+        ) ||
+        "New Category",
+
+      parent_id: 0
+    };
+
+    if (
+      type === "live"
+    ) {
+      db.live_categories.push(
+        category
+      );
+    } else if (
+      type === "vod"
+    ) {
+      db.vod_categories.push(
+        category
+      );
+    } else if (
+      type === "series"
+    ) {
+      db.series_categories.push(
+        category
+      );
+    } else {
+      return res.status(400).json({
+        error:
+          "type must be live, vod, or series"
+      });
+    }
+
+    saveDatabase();
+
+    res.json({
+      success: true,
+      category
+    });
+  }
+);
+
+/* =========================================================
+   NEXT ID HELPERS
+========================================================= */
+
+function nextId(
+  list,
+  key = "stream_id"
+) {
+  let maximum = 0;
+
+  for (
+    const item
+    of list
+  ) {
+    const id =
+      Number(
+        item[key]
+      );
+
+    if (
+      Number.isFinite(id) &&
+      id > maximum
+    ) {
+      maximum = id;
+    }
+  }
+
+  return maximum + 1;
+}
+
+function nextEpisodeId() {
+  let maximum = 0;
+
+  for (
+    const series
+    of db.series
+  ) {
+    const seasons =
+      series.episodes || {};
+
+    for (
+      const episodes
+      of Object.values(
+        seasons
+      )
+    ) {
+      if (
+        !Array.isArray(
+          episodes
+        )
+      ) {
+        continue;
+      }
+
+      for (
+        const episode
+        of episodes
+      ) {
+        const id =
+          Number(
+            episode.id
+          );
+
+        if (
+          Number.isFinite(id) &&
+          id > maximum
+        ) {
+          maximum = id;
+        }
+      }
+    }
+  }
+
+  return maximum + 1;
+}
+
+/* =========================================================
+   HEALTH
+========================================================= */
+
+app.get(
+  "/",
+  (req, res) => {
+    res.json({
+      status: "online",
+
+      service:
+        "Xtream-compatible IPTV API",
+
+      version:
+        "2.0.0",
+
+      endpoints: {
+        player_api:
+          "/player_api.php",
+
+        m3u:
+          "/get.php",
+
+        epg:
+          "/xmltv.php",
+
+        health:
+          "/health"
+      }
+    });
+  }
+);
+
+app.get(
+  "/health",
+  (req, res) => {
+    res.json({
+      status: "ok",
+
+      uptime:
+        process.uptime(),
+
+      timestamp:
+        new Date().toISOString(),
+
+      database: {
+        users:
+          db.users.length,
+
+        live:
+          db.live_streams.length,
+
+        movies:
+          db.vod_streams.length,
+
+        series:
+          db.series.length
+      }
+    });
+  }
+);
+
+/* =========================================================
+   404
+========================================================= */
+
+app.use(
+  (req, res) => {
+    res.status(404).json({
+      error:
+        "Endpoint not found"
+    });
+  }
+);
+
+/* =========================================================
+   ERROR HANDLER
+========================================================= */
+
+app.use(
+  (
+    error,
+    req,
+    res,
+    next
+  ) => {
+    console.error(
+      error
+    );
+
+    if (
+      res.headersSent
+    ) {
+      return next(error);
+    }
+
+    res.status(500).json({
+      error:
+        "Internal server error"
+    });
+  }
+);
+
+/* =========================================================
+   START
+========================================================= */
+
+ensureDatabase();
+
+app.listen(
+  PORT,
+  HOST,
+  () => {
+    console.log(
+      "=========================================="
+    );
+
+    console.log(
+      " Xtream Compatible Server"
+    );
+
+    console.log(
+      "=========================================="
+    );
+
+    console.log(
+      `Port: ${PORT}`
+    );
+
+    console.log(
+      `Database: ${DB_FILE}`
+    );
+
+    console.log(
+      `Users: ${db.users.length}`
+    );
+
+    console.log(
+      `Live: ${db.live_streams.length}`
+    );
+
+    console.log(
+      `Movies: ${db.vod_streams.length}`
+    );
+
+    console.log(
+      `Series: ${db.series.length}`
+    );
+
+    console.log(
+      "=========================================="
+    );
+  }
+);
