@@ -189,11 +189,11 @@
   "vod_streams": [
     {
       "stream_id": 61103,
-      "name": "The Furious (2026)",
+      "name": "The Eyes (2026)",
       "category_id": "1",
       "stream_type": "movie",
-      "stream_url": "https://hls.shegu.net/38381256.m3u8?sign=21a0016bd88cfba8dfe3ab6101610e9ac9b470b3F03&t=1783182114&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
-      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92v-TxknNEc-aoWOT4gR2IqW8ZaCCH8He5BfCcLFZ8smTUJJVxPvgR94&s=10",
+      "stream_url": "https://hls20.cdnvideo11.shop/child/k3OEULGdXZCUMHIrUL0/720/7c03c60c979b72a337744b5f4ca0b2e9.m3u8",
+      "stream_icon": "https://images.justwatch.com/poster/346941733/s166/the-eyes-2026.jpg",
       "container_extension": "m3u8"
     },
     {
@@ -201,7 +201,7 @@
       "name": "Colony (2026)",
       "category_id": "1",
       "stream_type": "movie",
-      "stream_url": "https://hls.shegu.net/38666566.m3u8?sign=3cd57c3f20a9069fff55b53f17ea27b6d040defeF03&t=1783184482&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
+      "stream_url": "https://hls08.cdnvideo11.shop/hls08/12905/Ep1.v485_index.m3u8",
       "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       "container_extension": "m3u8"
     },
