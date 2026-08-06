@@ -17,7 +17,17 @@
     },
     {
       "category_id": "2",
-      "category_name": "🇬🇧 UK",
+      "category_name": "🎬 Movies",
+      "parent_id": 0
+          },
+    {
+      "category_id": "3",
+      "category_name": "🐥 Kids",
+      "parent_id": 0
+    },
+    {
+      "category_id": "4",
+      "category_name": "⚽ Sports",
       "parent_id": 0
     }
   ],
@@ -526,7 +536,7 @@
   "stream_url": "http://40.160.24.52/C-SPAN_2/index.m3u8",
   "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/5/53/C-SPAN_Logo.svg",
   "epg_channel_id": "CSPAN2.us"
-},
+}
   ],
 
   "vod_categories": [
