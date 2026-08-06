@@ -29,6 +29,16 @@
       "category_id": "4",
       "category_name": "⚽ Sports",
       "parent_id": 0
+                },
+    {
+      "category_id": "5",
+      "category_name": "🌏 Documentary",
+      "parent_id": 0
+    },
+    {
+      "category_id": "6",
+      "category_name": "🇬🇧 Sky Cinema",
+      "parent_id": 0
     }
   ],
 
@@ -536,7 +546,106 @@
   "stream_url": "http://40.160.24.52/C-SPAN_2/index.m3u8",
   "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/5/53/C-SPAN_Logo.svg",
   "epg_channel_id": "CSPAN2.us"
-}
+},
+  {
+  "stream_id": 600,
+  "name": "Sky Cinema Action",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzciLCJ0cyI6MTc4NTMxMjI3MzEzN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 601,
+  "name": "Sky Cinema Hits",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzMiLCJ0cyI6MTc4NTMxMjA1Mzc3Mn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 602,
+  "name": "Sky Cinema Family",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzYiLCJ0cyI6MTc4NTMxMjE1ODUwN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 603,
+  "name": "Sky Cinema Comedy",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzgiLCJ0cyI6MTc4NTMxMjQ5NjY3N30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 604,
+  "name": "Sky Cinema Thriller",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzkiLCJ0cyI6MTc4NTMxMjYwNTI1Nn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 605,
+  "name": "Sky Cinema Sci-Fi & Horror",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2ODEiLCJ0cyI6MTc4NTMxMzQ2NTcwMH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 606,
+  "name": "Sky Cinema Drama",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2ODAiLCJ0cyI6MTc4NTMxMzYxNDg0Nn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 607,
+  "name": "Sky Cinema Select",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzIiLCJ0cyI6MTc4NTMxMzc5NzU5NH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 608,
+  "name": "Sky Cinema Premiere",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzEiLCJ0cyI6MTc4NTMxNDEyMTEyN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 609,
+  "name": "Sky Cinema Animation",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzUiLCJ0cyI6MTc4NTMxODU2MDU3NH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 610,
+  "name": "TNT USA",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMzgiLCJ0cyI6MTc4NTAwNTc0NTYxNn0",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/6/64/TNT_Logo_2016.svg",
+  "epg_channel_id": "TNT.us"
+}  
   ],
 
   "vod_categories": [
