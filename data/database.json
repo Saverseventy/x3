@@ -664,7 +664,34 @@
       "stream_url": "https://vidmody.com/vs/tt31727397",
       "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
       "container_extension": "mp4"
-    }
+    },
+  {
+    "stream_id": 6000,
+    "name": "Gladiator II (2024) | Tagalog Dubbed",
+    "category_id": "2",
+    "stream_type": "movie",
+    "stream_url": "https://x4-rq1r.onrender.com/video/gladiator-ii-2024",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6001,
+    "name": "Enola Holmes 3 (2026) | Tagalog Dubbed",
+    "category_id": "2",
+    "stream_type": "movie",
+    "stream_url": "https://x4-rq1r.onrender.com/video/enola-holmes-3-2026",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6002,
+    "name": "The Beekeeper (2024) | Tagalog Dubbed",
+    "category_id": "2",
+    "stream_type": "movie",
+    "stream_url": "https://download1583.mediafire.com/gb1q44gis3vg10PdD06meAhd-lXhEjIun1TXhmQ0g6M54-YLkYiZVVQUARV1OqfYZyQ_YE1VT-PPTCMvQDVCNMLrgPZBloj5T_bbs0egHHoPldzG-yBYbmujVsWQn2dY-DKVpxzRvOXY0wPYJQeBCF8Uwz4kogwO-a7wmxltwp3xlw/qj49hqls7n9twsu/The.Beekeeper.2023.1080p.WEB-DL.AAC5.1.x265-Kotoko.mkv",
+    "stream_icon": "",
+    "container_extension": "mkv"
+  }
   ],
 
   "series_categories": [
