@@ -8,173 +8,176 @@
       "max_connections": 1
     }
   ],
+
   "live_categories": [
     {
       "category_id": "1",
       "category_name": "🇵🇭 Philippines",
       "parent_id": 0
     },
-    {          
+    {
       "category_id": "2",
-      "category_name": "🇬🇧 Uk",
+      "category_name": "🇬🇧 UK",
       "parent_id": 0
     }
   ],
+
   "live_streams": [
-  {
-    "stream_id": 1,
-    "name": "ALLTV2 (480p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/alltv/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/LFgDPhN.png",
-    "epg_channel_id": "AllTV.ph@SD"
-  },
-  {
-    "stream_id": 2,
-    "name": "Cartoon Channel PH (720p) [Geo-blocked]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://stream-cdn-iad3.vaughnsoft.net/play/live_cartoonchannelph.flv",
-    "stream_icon": "https://static-cdn.jtvnw.net/jtv_user_pictures/af449718-cdf7-4357-b308-30edb3ac6eff-profile_image-300x300.png",
-    "epg_channel_id": "CartoonChannelPH.ph@SD"
-  },
-  {
-    "stream_id": 3,
-    "name": "CCTN 47 (1080p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
-    "stream_icon": "https://i.imgur.com/IFpAmvW.png",
-    "epg_channel_id": "CCTN47.ph@SD"
-  },
-  {
-    "stream_id": 4,
-    "name": "Cinemo (480p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/cinemo/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/rGAOD3f.png",
-    "epg_channel_id": "CineMo.ph@SD"
-  },
-  {
-    "stream_id": 5,
-    "name": "CLTV 36 (720p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
-    "stream_icon": "https://i.imgur.com/IUcTFQ2.png",
-    "epg_channel_id": "CLTV36.ph@SD"
-  },
-  {
-    "stream_id": 6,
-    "name": "FilAmTV Network (1080p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://cdn.vegasplus.us/vegas/ftv/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/nRiApdI.png",
-    "epg_channel_id": "FilAmTVNetwork.us@HD"
-  },
-  {
-    "stream_id": 7,
-    "name": "God Stands TV Tagalog",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://online.godstands.tv:5443/WebRTCApp/streams/Tagalog.m3u8",
-    "stream_icon": "https://i.imgur.com/EO6cYUI.png",
-    "epg_channel_id": "GodStandsTV.pk@Tagalog"
-  },
-  {
-    "stream_id": 8,
-    "name": "GTV (480p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/gtv/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/rWhamwh.png",
-    "epg_channel_id": "GTV.ph@SD"
-  },
-  {
-    "stream_id": 9,
-    "name": "IBC 13 (480p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/ibc_13/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/1KaTUOo.png",
-    "epg_channel_id": "IBC13.ph@SD"
-  },
-  {
-    "stream_id": 10,
-    "name": "Jeepney TV (480p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/jeepney/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/RNxfhcc.png",
-    "epg_channel_id": "JeepneyTV.ph@SD"
-  },
-  {
-    "stream_id": 11,
-    "name": "Kapatid TV 5 (480p) [Geo-blocked]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/kapatid_hd/kapatid.m3u8",
-    "stream_icon": "https://i.imgur.com/xb5lkwG.png",
-    "epg_channel_id": "KapatidTV5.ph@SD"
-  },
-  {
-    "stream_id": 12,
-    "name": "Knowledge Channel (360p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/knowledge_channel/knowledge-channel.m3u8",
-    "stream_icon": "https://i.imgur.com/YrmMWXD.png",
-    "epg_channel_id": "KnowledgeChannel.ph@SD"
-  },
-  {
-    "stream_id": 13,
-    "name": "Kool TV (720p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://twitch-m3u8.bastypro112.workers.dev/kooltvlive/index.m3u8",
-    "stream_icon": "https://yt3.googleusercontent.com/opqPJfc0Ptd9ohl4R-2hPjaquIAdWuqvRb0T_LBCmfyGznIvfGN0HOlcWZk6Lj2jk11s2Zlk=s1200-c-k-c0x00ffffff-no-rj",
-    "epg_channel_id": "KoolTV.ph@SD"
-  },
-  {
-    "stream_id": 14,
-    "name": "Living Asia Channel (1080p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://cdn.vegasplus.us/vegas/lac/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/q3UToRM.png",
-    "epg_channel_id": "LivingAsiaChannel.ph@HD"
-  },
-  {
-    "stream_id": 15,
-    "name": "RPTV (480p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/rptv/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/ZgSEwq9.png",
-    "epg_channel_id": "RPTV.ph@SD"
-  },
-  {
-    "stream_id": 16,
-    "name": "TV5 (480p) [Not 24/7]",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://streams.comclark.com/pknsd/tv5/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/PYJhTiq.png",
-    "epg_channel_id": "TV5.ph@SD"
-  },
-  {
-    "stream_id": 17,
-    "name": "Vegas Life TV (1080p)",
-    "category_id": "1",
-    "stream_type": "live",
-    "stream_url": "https://cdn.vegasplus.us/vegas/vltv/playlist.m3u8",
-    "stream_icon": "https://i.imgur.com/G7lONcu.png",
-    "epg_channel_id": "VegasLifeTV.us@HD"
-  }
+    {
+      "stream_id": 1,
+      "name": "ALLTV2 (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/alltv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/LFgDPhN.png",
+      "epg_channel_id": "AllTV.ph@SD"
+    },
+    {
+      "stream_id": 2,
+      "name": "Cartoon Channel PH (720p) [Geo-blocked]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://stream-cdn-iad3.vaughnsoft.net/play/live_cartoonchannelph.flv",
+      "stream_icon": "https://static-cdn.jtvnw.net/jtv_user_pictures/af449718-cdf7-4357-b308-30edb3ac6eff-profile_image-300x300.png",
+      "epg_channel_id": "CartoonChannelPH.ph@SD"
+    },
+    {
+      "stream_id": 3,
+      "name": "CCTN 47 (1080p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
+      "stream_icon": "https://i.imgur.com/IFpAmvW.png",
+      "epg_channel_id": "CCTN47.ph@SD"
+    },
+    {
+      "stream_id": 4,
+      "name": "Cinemo (480p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/cinemo/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/rGAOD3f.png",
+      "epg_channel_id": "CineMo.ph@SD"
+    },
+    {
+      "stream_id": 5,
+      "name": "CLTV 36 (720p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
+      "stream_icon": "https://i.imgur.com/IUcTFQ2.png",
+      "epg_channel_id": "CLTV36.ph@SD"
+    },
+    {
+      "stream_id": 6,
+      "name": "FilAmTV Network (1080p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://cdn.vegasplus.us/vegas/ftv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/nRiApdI.png",
+      "epg_channel_id": "FilAmTVNetwork.us@HD"
+    },
+    {
+      "stream_id": 7,
+      "name": "God Stands TV Tagalog",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://online.godstands.tv:5443/WebRTCApp/streams/Tagalog.m3u8",
+      "stream_icon": "https://i.imgur.com/EO6cYUI.png",
+      "epg_channel_id": "GodStandsTV.pk@Tagalog"
+    },
+    {
+      "stream_id": 8,
+      "name": "GTV (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/gtv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/rWhamwh.png",
+      "epg_channel_id": "GTV.ph@SD"
+    },
+    {
+      "stream_id": 9,
+      "name": "IBC 13 (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/ibc_13/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/1KaTUOo.png",
+      "epg_channel_id": "IBC13.ph@SD"
+    },
+    {
+      "stream_id": 10,
+      "name": "Jeepney TV (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/jeepney/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/RNxfhcc.png",
+      "epg_channel_id": "JeepneyTV.ph@SD"
+    },
+    {
+      "stream_id": 11,
+      "name": "Kapatid TV 5 (480p) [Geo-blocked]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/kapatid_hd/kapatid.m3u8",
+      "stream_icon": "https://i.imgur.com/xb5lkwG.png",
+      "epg_channel_id": "KapatidTV5.ph@SD"
+    },
+    {
+      "stream_id": 12,
+      "name": "Knowledge Channel (360p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://thinkkast.dpdns.org/tkk-ph/i7/knowledge_channel/knowledge-channel.m3u8",
+      "stream_icon": "https://i.imgur.com/YrmMWXD.png",
+      "epg_channel_id": "KnowledgeChannel.ph@SD"
+    },
+    {
+      "stream_id": 13,
+      "name": "Kool TV (720p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://twitch-m3u8.bastypro112.workers.dev/kooltvlive/index.m3u8",
+      "stream_icon": "https://yt3.googleusercontent.com/opqPJfc0Ptd9ohl4R-2hPjaquIAdWuqvRb0T_LBCmfyGznIvfGN0HOlcWZk6Lj2jk11s2Zlk=s1200-c-k-c0x00ffffff-no-rj",
+      "epg_channel_id": "KoolTV.ph@SD"
+    },
+    {
+      "stream_id": 14,
+      "name": "Living Asia Channel (1080p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://cdn.vegasplus.us/vegas/lac/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/q3UToRM.png",
+      "epg_channel_id": "LivingAsiaChannel.ph@HD"
+    },
+    {
+      "stream_id": 15,
+      "name": "RPTV (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/rptv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/ZgSEwq9.png",
+      "epg_channel_id": "RPTV.ph@SD"
+    },
+    {
+      "stream_id": 16,
+      "name": "TV5 (480p) [Not 24/7]",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/tv5/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/PYJhTiq.png",
+      "epg_channel_id": "TV5.ph@SD"
+    },
+    {
+      "stream_id": 17,
+      "name": "Vegas Life TV (1080p)",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://cdn.vegasplus.us/vegas/vltv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/G7lONcu.png",
+      "epg_channel_id": "VegasLifeTV.us@HD"
+    }
   ],
+
   "vod_categories": [
     {
       "category_id": "1",
@@ -182,125 +185,127 @@
       "parent_id": 0
     }
   ],
+
   "vod_streams": [
-  {
-    "stream_id": 61103,
-    "name": "The Furious (2026)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://hls.shegu.net/38381256.m3u8?sign=21a0016bd88cfba8dfe3ab6101610e9ac9b470b3F03&t=1783182114&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92v-TxknNEc-aoWOT4gR2IqW8ZaCCH8He5BfCcLFZ8smTUJJVxPvgR94&s=10",
-    "container_extension": "m3u8"
-  },
-  {
-    "stream_id": 61103,
-    "name": "Colony (2026)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://hls.shegu.net/38666566.m3u8?sign=3cd57c3f20a9069fff55b53f17ea27b6d040defeF03&t=1783184482&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
-    "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    "container_extension": "m3u8"
-  },
-  {
-    "stream_id": 61103,
-    "name": "Obsession (2026)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://hls08.cdnvideo11.shop/hls08/13229/Ep1.v129_index.m3u8",
-    "stream_icon": "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    "container_extension": "m3u8"
-  },
-  {
-    "stream_id": 61103,
-    "name": "The Super Mario Galaxy Movie (2026)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt28650488",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61089,
-    "name": "Straw 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://hls13.cdnvideo11.shop/hls13/STRAW-Ep1/index.m3u8?v=39b02eb5-4075-4773-9839-84d7cf81b952",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaiwIETNudF5ZLQx0cumiPhOOgGP22iAPpA&s",
-    "container_extension": "m3u8"
-  },
-  {
-    "stream_id": 61092,
-    "name": "The Surrender -(2025)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://1a-1791.com/video/fww1/0b/s8/2/b/i/V/N/biVNy.aaa.mp4",
-    "stream_icon": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS7txPDdKixhcztqpf6qxpwP9sSAnZwPjrwRMz3L-L_7xnKwpZfPvoEzJqqnAfEEWbPTjZWU1GOjoHGPFredoz6uL7oLPh4S3oZHPUcZ78",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61093,
-    "name": "Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle (2025)",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://videodelivery5.site/12193/Ep1_index.m3u8",
-    "stream_icon": "https://dam.mediacorp.sg/image/upload/s--TSyRc0KI--/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2025/03/06/demon_slayer_infinity_castle.png?itok=pXwqu0XX",
-    "container_extension": "m3u8"
-  },
-  {
-    "stream_id": 61094,
-    "name": "Superman 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt5950044",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbFIdr8-U2wTcZmlyDGClUdxh0HKyUFM9b7a9vdnZ_3Tj3MYQ6KWf0q2K&s=10",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61095,
-    "name": "Fantastic 4 - 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt10676052",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp5SH6RsqIG7nxz6QcPi0l-jSCB1wN_jh8JghfzFdk9k2fKpajTnwoCSwD&s=10",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61096,
-    "name": "The Conjuring Last Rites 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt22898462",
-    "stream_icon": "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Conjuring_%E2%80%93_Last_Rites.jpg",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61097,
-    "name": "The Elixir 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt32643830",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXXTrN75-Uz9QCCmQF07vm2y6L_1gOXJtxbvmY6Wkw3DZbwEZP_eKPTgQ&s=10",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61098,
-    "name": "The Shadow's Edge 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt34610311",
-    "stream_icon": "https://m.media-amazon.com/images/M/MV5BODM1MTNhMjMtMDYxNS00M2ZkLTkwODMtYzEwNzQ1YTFmYzJkXkEyXkFqcGc@._V1_.jpg",
-    "container_extension": "mp4"
-  },
-  {
-    "stream_id": 61099,
-    "name": "Hostile Takeover 2025",
-    "category_id": "1",
-    "stream_type": "movie",
-    "stream_url": "https://vidmody.com/vs/tt31727397",
-    "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
-    "container_extension": "mp4"
-  }
+    {
+      "stream_id": 61103,
+      "name": "The Furious (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls.shegu.net/38381256.m3u8?sign=21a0016bd88cfba8dfe3ab6101610e9ac9b470b3F03&t=1783182114&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92v-TxknNEc-aoWOT4gR2IqW8ZaCCH8He5BfCcLFZ8smTUJJVxPvgR94&s=10",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61104,
+      "name": "Colony (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls.shegu.net/38666566.m3u8?sign=3cd57c3f20a9069fff55b53f17ea27b6d040defeF03&t=1783184482&client=febbox&KEY7=1961828&KEY8=febbox_oauth_file_get_download_url&quality=1080p",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61105,
+      "name": "Obsession (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls08.cdnvideo11.shop/hls08/13229/Ep1.v129_index.m3u8",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61106,
+      "name": "The Super Mario Galaxy Movie (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt28650488",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61089,
+      "name": "Straw 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls13.cdnvideo11.shop/hls13/STRAW-Ep1/index.m3u8?v=39b02eb5-4075-4773-9839-84d7cf81b952",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaiwIETNudF5ZLQx0cumiPhOOgGP22iAPpA&s",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61092,
+      "name": "The Surrender -(2025)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://1a-1791.com/video/fww1/0b/s8/2/b/i/V/N/biVNy.aaa.mp4",
+      "stream_icon": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS7txPDdKixhcztqpf6qxpwP9sSAnZwPjrwRMz3L-L_7xnKwpZfPvoEzJqqnAfEEWbPTjZWU1GOjoHGPFredoz6uL7oLPh4S3oZHPUcZ78",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61093,
+      "name": "Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle (2025)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://videodelivery5.site/12193/Ep1_index.m3u8",
+      "stream_icon": "https://dam.mediacorp.sg/image/upload/s--TSyRc0KI--/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2025/03/06/demon_slayer_infinity_castle.png?itok=pXwqu0XX",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61094,
+      "name": "Superman 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt5950044",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbFIdr8-U2wTcZmlyDGClUdxh0HKyUFM9b7a9vdnZ_3Tj3MYQ6KWf0q2K&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61095,
+      "name": "Fantastic 4 - 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt10676052",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp5SH6RsqIG7nxz6QcPi0l-jSCB1wN_jh8JghfzFdk9k2fKpajTnwoCSwD&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61096,
+      "name": "The Conjuring Last Rites 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt22898462",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Conjuring_%E2%80%93_Last_Rites.jpg",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61097,
+      "name": "The Elixir 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt32643830",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXXTrN75-Uz9QCCmQF07vm2y6L_1gOXJtxbvmY6Wkw3DZbwEZP_eKPTgQ&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61098,
+      "name": "The Shadow's Edge 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt34610311",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BODM1MTNhMjMtMDYxNS00M2ZkLTkwODMtYzEwNzQ1YTFmYzJkXkEyXkFqcGc@._V1_.jpg",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61099,
+      "name": "Hostile Takeover 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt31727397",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
+      "container_extension": "mp4"
+    }
   ],
+
   "series_categories": [
     {
       "category_id": "1",
@@ -308,6 +313,7 @@
       "parent_id": 0
     }
   ],
+
   "series": [
     {
       "series_id": 157041,
@@ -520,5 +526,7 @@
         ]
       }
     }
-  ]
+  ],
+
+  "epg": []
 }
