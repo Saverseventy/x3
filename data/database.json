@@ -663,7 +663,25 @@
 
   "vod_streams": [
     {
-      "stream_id": 61103,
+            "stream_id": 61101,
+      "name": "Spider Man Brand New Day 1080 (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://movies.honor-tv.42web.io/video/spiderman-brandnew-2026-1080p",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/250px-Spider-Man_Brand_New_Day_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "container_extension": "m3u8"
+    },
+    {
+            "stream_id": 61102,
+      "name": "Spider Man Brand New Day HD (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://movies.honor-tv.42web.io/video/spider-man-brandnew-2026-s2",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/250px-Spider-Man_Brand_New_Day_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "container_extension": "m3u8"
+    },
+    {
+            "stream_id": 61103,
       "name": "The Eyes (2026)",
       "category_id": "1",
       "stream_type": "movie",
