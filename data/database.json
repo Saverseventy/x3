@@ -653,9 +653,14 @@
       "category_id": "1",
       "category_name": "🎬 New Movies Added",
       "parent_id": 0
-    },
+          },
     {
       "category_id": "2",
+      "category_name": "🎬 Philippines Movies",
+      "parent_id": 0
+    },
+    {
+      "category_id": "3",
       "category_name": "🎬 Tagalog Dubbed",
       "parent_id": 0
     }
@@ -798,33 +803,312 @@
       "container_extension": "mp4"
     },
   {
-    "stream_id": 6000,
+    "stream_id": 6100,
     "name": "Gladiator II (2024) | Tagalog Dubbed",
-    "category_id": "2",
+    "category_id": "3",
     "stream_type": "movie",
     "stream_url": "https://x4-rq1r.onrender.com/video/gladiator-ii-2024",
     "stream_icon": "",
     "container_extension": "mp4"
   },
   {
-    "stream_id": 6001,
+    "stream_id": 6101,
     "name": "Enola Holmes 3 (2026) | Tagalog Dubbed",
-    "category_id": "2",
+    "category_id": "3",
     "stream_type": "movie",
-    "stream_url": "https://x4-rq1r.onrender.com/video/enola-holmes-3-2026",
+    "stream_url": "https://movies.honor-tv.42web.io/video/enola-holmes-3-2026",
     "stream_icon": "",
     "container_extension": "mp4"
   },
   {
-    "stream_id": 6002,
-    "name": "The Beekeeper (2024) | Tagalog Dubbed",
-    "category_id": "2",
+    "stream_id": 6102,
+    "name": "Back in Action (2024) | Tagalog Dubbed",
+    "category_id": "3",
     "stream_type": "movie",
-    "stream_url": "https://download1583.mediafire.com/gb1q44gis3vg10PdD06meAhd-lXhEjIun1TXhmQ0g6M54-YLkYiZVVQUARV1OqfYZyQ_YE1VT-PPTCMvQDVCNMLrgPZBloj5T_bbs0egHHoPldzG-yBYbmujVsWQn2dY-DKVpxzRvOXY0wPYJQeBCF8Uwz4kogwO-a7wmxltwp3xlw/qj49hqls7n9twsu/The.Beekeeper.2023.1080p.WEB-DL.AAC5.1.x265-Kotoko.mkv",
+    "stream_url": "https://ia601806.us.archive.org/2/items/back-in-action-tagalog-480-p/Back%20in%20Action%20%5BTagalog%5D-480P.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6103,
+    "name": "Carry On (2024) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dl.dropboxusercontent.com/s/xv69sa6dluo5up7ec1jnd/Carry-On.2024.720p.NF.WEB-DL.AAC2.0.x265-Methy.mkv?rlkey=zbusi4mb0hzvcq45ispy1ich7&st=h7ad4vrs&dl=0",
     "stream_icon": "",
     "container_extension": "mkv"
-      },
+  },
   {
+    "stream_id": 6104,
+    "name": "Metro (2013) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dl.dropboxusercontent.com/s/q51m4kyg5vxyr4chwaajw/Sh4dy-Metro-2013-tagdub.mp4?rlkey=y4fvzvrllvzt5btf11725mxfg&dl=0",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6105,
+    "name": "The Con-Heartist | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://rumble.com/hls-vod/6s11x5/playlist.m3u8?u=0&b=0",
+    "stream_icon": "",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 6106,
+    "name": "Back to Earth | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://rumble.com/hls-vod/6s3xwh/playlist.m3u8?u=0&b=0",
+    "stream_icon": "",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 6107,
+    "name": "John Rambo (2008) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn721802.ca.archive.org/0/items/john-rambo-2008/John%20Rambo%20%5B2008%5D.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6108,
+    "name": "Unforgettable Love (2016) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/unforgettable.-2016.-tag-dub/Unforgettable.2016.TagDub.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6109,
+    "name": "Contract Killer (1998) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/hitman-1998-1080p-converted/Hitman%201998_1080p_converted.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6110,
+    "name": "Dances With Dragon (1991) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/dances-with-dragon-1991-tagalog-dubbed/Dances%20With%20Dragon%20%281991%29%20%28Tagalog%20Dubbed%29.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6111,
+    "name": "Curry And Pepper (1990) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/curry-and-pepper-1990-tagalog-dubbed/Curry%20And%20Pepper%20%281990%29%20%28Tagalog%20Dubbed%29.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6112,
+    "name": "Ash Fall | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn721904.ca.archive.org/0/items/ash-fall-tagalog-dubbed/Ash%20Fall%20Tagalog%20Dubbed.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6113,
+    "name": "City Hunter | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn721802.ca.archive.org/0/items/vts-05-1_20240727_0813/VTS_05_1.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6114,
+    "name": "Downtown Torpedoes | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia800601.us.archive.org/28/items/vts-01-2_202408/VTS_01_2.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6115,
+    "name": "Carry On Pickpocket | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/vts-02-1_20240727/VTS_02_1.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6116,
+    "name": "Who Am I? | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/vts-01-5_202408/VTS_01_5.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6117,
+    "name": "Tiger Cage 2 | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://archive.org/download/vts-01-3_202408/VTS_01_3.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6118,
+    "name": "Fireworks | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia800306.us.archive.org/31/items/fireworks-movie-tagalog-dubbed/Fireworks%20movie_%20%28Tagalog%20dubbed%29.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6119,
+    "name": "The Great Wall | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia801503.us.archive.org/18/items/the-greatwall-tagalog-dubbed/The%20Greatwall%20Tagalog%20Dubbed.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6120,
+    "name": "Trouble | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia601304.us.archive.org/16/items/trouble-tagalog-dubbed/Trouble%20Tagalog%20Dubbed.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6121,
+    "name": "Insane (2016) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia600601.us.archive.org/26/items/insane2016-tagalog-dubbed/Insane_Tagalog_Dubbed.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6122,
+    "name": "Kung Fu Cult Master | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia800101.us.archive.org/16/items/vts-03-1_202408/VTS_03_1.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6123,
+    "name": "Blitz (2011) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia801002.us.archive.org/20/items/blitz2011tagalogdubbed/Blitz%20%282011%29%20Tagalog%20Dubbed.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6124,
+    "name": "Alive | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia801502.us.archive.org/31/items/alive_20220811/Alive.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6125,
+    "name": "Exo Next Door | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia803209.us.archive.org/3/items/exo-next-door-tagalog-dubbed/Exo%20Next%20Door%20Tagalog%20Dubbed.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6126,
+    "name": "Sayko 2 (1983) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn720302.ca.archive.org/0/items/sayko-2-1983-tagalog-dubbed/Sayko%202%201983%20Tagalog%20Dubbed.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6127,
+    "name": "Twins | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://rumble.com/hls-vod/6sks59/playlist.m3u8",
+    "stream_icon": "",
+    "container_extension": "m3u8"
+  },
+  {
+    "stream_id": 6128,
+    "name": "Fantastic Mr. Fox | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia600303.us.archive.org/24/items/fantastic-mr.-fox-tagalog-dubbed/Fantastic%20Mr.%20Fox%20%28Tagalog%20Dubbed%29.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6129,
+    "name": "Ashin Of The North | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia801401.us.archive.org/24/items/ashin-of-the-north-tagalog-dubbed/Ashin%20Of%20The%20North%20Tagalog%20Dubbed.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6130,
+    "name": "Byaheng Isang Daan (2016) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn720306.ca.archive.org/0/items/byaheng-isang-daan-tagalog-dubbed-2016/Byaheng%20Isang%20Daan%20Tagalog%20Dubbed%20%282016%29.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6131,
+    "name": "An American Tail (1986) | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia800100.us.archive.org/26/items/an-american-tail-1986-tagalog-dubbed/An%20American%20Tail%20%281986%29%20Tagalog%20Dubbed.ia.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6132,
+    "name": "Spider-Man: Into the Spider-Verse | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://dn720305.ca.archive.org/0/items/spider-man-into-the-spider-verse-tagalog-dubbed-pinoy-movies-hub/Spider-Man%20Into%20the%20Spider-Verse%20Tagalog%20Dubbed%20-%20Pinoy%20Movies%20Hub.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+  {
+    "stream_id": 6133,
+    "name": "Falling Into Your Smile | Tagalog Dubbed",
+    "category_id": "3",
+    "stream_type": "movie",
+    "stream_url": "https://ia601006.us.archive.org/4/items/fdownloader.-net-aqnq-1-ugi-gzffs-jps-9y-2j-ap-0mv-9-vq-fmepq-pse-j-4t-hd-e-8-9-/FDownloader.Net_AQNQ1UGiGzffsJps9y2jAp0mv9VqFmepqPSeJ4tHdE8-9MEDdyu4fwUWV7qkRuRYgtqwDlnhsoj3ZvaoTKEpjQmqYSBmGfld0rDaXk_19djt2w_720p_%28HD%29.mp4",
+    "stream_icon": "",
+    "container_extension": "mp4"
+  },
+{
     "stream_id": 6002,
     "name": "KMJS Gabi ng Lagim",
     "category_id": "2",
