@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "username": "demo",
-      "password": "demo",
+      "username": "honortv",
+      "password": "123456",
       "enabled": true,
       "exp_date": "2099-12-31T23:59:59.000Z",
       "max_connections": 1
@@ -664,10 +664,10 @@
   "vod_streams": [
     {
             "stream_id": 61101,
-      "name": "Spider Man Brand New Day 1080 (2026)",
+      "name": "Spider Man Brand New Day (2026)",
       "category_id": "1",
       "stream_type": "movie",
-      "stream_url": "https://movies.honor-tv.42web.io/video/spiderman-brandnew-2026-1080p",
+      "stream_url": "https://streamings.honor-tv.42web.io/spidemanbrandnewday2026/vod.m3u8",
       "stream_icon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/250px-Spider-Man_Brand_New_Day_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
       "container_extension": "mkv"
     },
