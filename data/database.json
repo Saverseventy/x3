@@ -1,0 +1,1345 @@
+{
+  "users": [
+    {
+      "username": "honortv",
+      "password": "123456",
+      "enabled": true,
+      "exp_date": "2099-12-31T23:59:59.000Z",
+      "max_connections": 10000
+    }
+  ],
+
+  "live_categories": [
+    {
+      "category_id": "1",
+      "category_name": "🇵🇭 Philippines",
+      "parent_id": 0
+    },
+    {
+      "category_id": "2",
+      "category_name": "🎬 Movies",
+      "parent_id": 0
+          },
+    {
+      "category_id": "3",
+      "category_name": "🐥 Kids",
+      "parent_id": 0
+    },
+    {
+      "category_id": "4",
+      "category_name": "⚽ Sports",
+      "parent_id": 0
+                },
+    {
+      "category_id": "5",
+      "category_name": "🌏 Documentary",
+      "parent_id": 0
+    },
+    {
+      "category_id": "6",
+      "category_name": "🇬🇧 Sky Cinema",
+      "parent_id": 0
+    }
+  ],
+
+  "live_streams": [
+    {
+      "stream_id": 1,
+      "name": "ALLTV2",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/alltv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/LFgDPhN.png",
+      "epg_channel_id": "AllTV.ph@SD"
+    },
+    {
+      "stream_id": 2,
+      "name": "TV5",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/tv5/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/PYJhTiq.png",
+      "epg_channel_id": "TV5.ph@SD"
+    },
+    {
+      "stream_id": 3,
+      "name": "CCTN",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
+      "stream_icon": "https://i.imgur.com/IFpAmvW.png",
+      "epg_channel_id": "CCTN47.ph@SD"
+    },
+    {
+      "stream_id": 4,
+      "name": "CLTV 36",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
+      "stream_icon": "https://i.imgur.com/IUcTFQ2.png",
+      "epg_channel_id": "CLTV36.ph@SD"
+    },
+    {
+      "stream_id": 5,
+      "name": "GTV",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/gtv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/rWhamwh.png",
+      "epg_channel_id": "GTV.ph@SD"
+    },
+    {
+      "stream_id": 6,
+      "name": "IBC 13",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/ibc_13/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/1KaTUOo.png",
+      "epg_channel_id": "IBC13.ph@SD"
+    },
+    {
+      "stream_id": 7,
+      "name": "Jeepney TV",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/jeepney/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/RNxfhcc.png",
+      "epg_channel_id": "JeepneyTV.ph@SD"
+    },
+    {
+      "stream_id": 8,
+      "name": "RPTV",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/rptv/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/ZgSEwq9.png",
+      "epg_channel_id": "RPTV.ph@SD"
+    },
+    {
+      "stream_id": 50,
+      "name": "Cinemo",
+      "category_id": "1",
+      "stream_type": "live",
+      "stream_url": "https://streams.comclark.com/pknsd/cinemo/playlist.m3u8",
+      "stream_icon": "https://i.imgur.com/rGAOD3f.png",
+      "epg_channel_id": "CineMo.ph@SD"
+    },
+{
+  "stream_id": 100,
+  "name": "ACTION HOLLYWOOD MOVIES",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://amg01076-lightningintern-actionhollywood-samsungnz-82rry.amagi.tv/playlist/amg01076-lightningintern-actionhollywood-samsungnz/playlist.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw1zW8RLLNCQm6UHcIIJZlscOB5vhs7BF2I7SfTthYGv3LtHeRSut2-Ag&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 101,
+  "name": "Toonami Aftermath West",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "http://api.toonamiaftermath.com:3000/pst/playlist.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBOT1C19Lzj4dKFxr2B-RSrtzjVJ-4vvL6A&s",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 102,
+  "name": "TOONAMI AFTER MATH",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "http://api.toonamiaftermath.com:3000/movies/playlist.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfq9RTjEQHTyeffmWcd3j_iU6A1WdaQ091zRuWYHm69Vl1LPZaiwxOuFR&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 103,
+  "name": "Toonami Aftermath East",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBOT1C19Lzj4dKFxr2B-RSrtzjVJ-4vvL6A&s",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 104,
+  "name": "MovieSphere",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://moviesphereuk-samsunguk.amagi.tv/playlist.m3u8",
+  "stream_icon": "https://10play.com.au/ip/s3/2022/12/05/f67e539ee7ca067d20f1d406a196abd8-1202911.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 105,
+  "name": "24 Hour Free Movies",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://d1b5mlajbmvkjv.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/UDU-DistroTV/145.m3u8",
+  "stream_icon": "https://provider-static.plex.tv/epg/images/thumbnails/24hrfreemovies_artwork_vertical.jpg",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 106,
+  "name": "MYTIME MOVIE",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://mytimefrance-rakuten-samsung.amagi.tv/playlist.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 107,
+  "name": "Pluto TV Action",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://jmp2.uk/plu-5dbfeb961b411c00090b52b3.m3u8",
+  "stream_icon": "https://images.pluto.tv/channels/5dbfeb961b411c00090b52b3/colorLogoPNG.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 108,
+  "name": "Pluto TV Movies",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://jmp2.uk/plu-5ad8d3a31b95267e225e4e09.m3u8",
+  "stream_icon": "https://images.pluto.tv/channels/5ad8d3a31b95267e225e4e09/colorLogoPNG.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 109,
+  "name": "Rakuten VIKI",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://newidco-rakutenviki-2-eu.xiaomi.wurl.tv/playlist.m3u8",
+  "stream_icon": "https://images-2.rakuten.tv/storage/global-live-channel/translation/artwork-negative/38a298ea-4739-4ae9-b656-7f5881195c06.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 110,
+  "name": "Viki Rakuten",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://dce1408e0efa4bc4b6ca1366c56911fb.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/Plex_RakutenViki/playlist.m3u8?ads.wurl_channel=843&ads.wurl_name=RakutenViki&ads.coppa=0&ads.us_privacy=1---&ads.psid=62274240-07e7-5d94-8dc8-ef68cf19e175&ads.targetopt=0&ads.plex_token=p6Ph7ybs-ExykQE-Zz78&ads.plex_id=60d4edd8b2fdec002c14112f&ads.ua=okhttp%2F4.9.0&ads.app_bundle=com.plexapp.android&ads.app_store_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.plexapp.android&ads.gdpr=0&ads.consent=0&ads.device_type=handset&ads.device_id_type=",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHrH4GLT9-azQ-jMhJHENLtJE7AsZ4SfdJzA&s",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 111,
+  "name": "Shudder TV",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://bcovlive-a.akamaihd.net/d615712863304052922d550fd17daef2/us-east-1/6245817279001/playlist.m3u8",
+  "stream_icon": "https://image.roku.com/developer_channels/prod/9ebf061ce22d311457b7ecd792815b8def48d6c478184b8f4e4a4589f712bfaa.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 112,
+  "name": "LG 1 Film",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=15465",
+  "stream_icon": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1film_epg_white_2_0.png",
+  "epg_channel_id": "24.7.Dummy.us"
+},
+{
+  "stream_id": 113,
+  "name": "LG 1: Action",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=16714",
+  "stream_icon": "https://lge-static.ottera.tv/prod/lge/linear_channel/anamorphic-logo/400x200/lg1action_epg_logo_400x200.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 114,
+  "name": "LG 1 Spotlight",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13959",
+  "stream_icon": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1spt_epg_white.png",
+  "epg_channel_id": "24.7.Dummy.us"
+},
+{
+  "stream_id": 115,
+  "name": "LG 1",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=10957",
+  "stream_icon": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1_800x200_white.png",
+  "epg_channel_id": "24.7.Dummy.us"
+},
+{
+  "stream_id": 116,
+  "name": "LG 1 +1",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=11874",
+  "stream_icon": "https://lge-static.ottera.tv/prod/lge/linear_channel/anamorphic-logo/400x200/lg1_400x200_white_1.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 117,
+  "name": "Sony One | Action HITS",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://89514e758f814907be6d14bbc0aa66b7.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-800-UK-SONYONEACTIONHITS-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/EN_LG_FAST_ActionHits_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 118,
+  "name": "Sony One | Comedy HITS",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://9f8e2ffcd87f4c469be7194e48f84874.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-802-UK-SONYONECOMEDYHITS-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/EN_LG_FAST_ComedyHits_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 119,
+  "name": "Sony One | Comedy TV",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://ec613694ee5049d3b8f30913b619662e.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-804-UK-SONYONECOMEDYTV-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/EN_LG_FAST_ComedyTV_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 120,
+  "name": "Sony One | Dragons' Den",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://5dae1f2dfec54d8f9992b7d2ac0bc627.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-810-UK-SONYONEDRAGONSDEN-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/En_LG_FAST_DragonsDen_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 121,
+  "name": "Sony One | FAVES",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://8a4805800dac428ebbf1d3cde0cdcf87.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-806-UK-SONYONEFAVES-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/EN_LG_FAST_Faves_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 122,
+  "name": "Sony One | Thriller TV",
+  "category_id": "2",
+  "stream_type": "live",
+  "stream_url": "https://52aad07d9d4f4d479d9b27e08ddf9e8b.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-808-UK-SONYONETHRILLERTV-LG_UK/playlist.m3u8",
+  "stream_icon": "https://d1biytugnv36sr.cloudfront.net/resize?width=400&height=200&url=https://static.frequency.com/studio/sony/channels/EN_LG_FAST_ThrillerTV_ChannelLogo_Horizontal.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 200,
+  "name": "TOON GOOGLE",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=36",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcy15tEFePYQeCrh2Qhgq5SKECDCg-E2ay7rs0wMfpFDtjvhTbOD5D33SG&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 201,
+  "name": "KIDS FLIX",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=50",
+  "stream_icon": "https://www.kidsflix.com/themes/custom/viva/kidsflix/logo.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 202,
+  "name": "Spacetoon",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://streams.spacetoon.com/live/stchannel/smil:livesmil.smil/chunklist.m3u8",
+  "stream_icon": "https://spacetoon.com/assets/imgs/1stoon.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 203,
+  "name": "Jungle Book",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://cc-4bhi5osabejc9.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-4bhi5osabejc9/junglebook.m3u8",
+  "stream_icon": "https://pash.ink/storage/uploads/JungleBook_Logo.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 204,
+  "name": "Zoo Moo",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://amg01553-blueantmediaasi-zoomoonz-samsungnz-rdufn.amagi.tv/playlist/amg01553-blueantmediaasi-zoomoonz-samsungnz/playlist.m3u8",
+  "stream_icon": "https://images.squarespace-cdn.com/content/v1/5c4104e7af209609ea6f281b/b440d39b-935e-4b40-9b6d-edc3d94f11b9/Primary+Logo.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 205,
+  "name": "PBS KIDS",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8?DVR",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/PBS_Kids_logo_%282022%29.svg/1200px-PBS_Kids_logo_%282022%29.svg.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 206,
+  "name": "Cartoon Channel PH",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://live20.bozztv.com/giatv/giatv-cartoonchannelph/cartoonchannelph/playlist.m3u8",
+  "stream_icon": "https://phcorner.org/attachments/20250622_111312-webp.3787370/",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 207,
+  "name": "PBS KIDS",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/chunklist_b2000000.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKgcjbbc9JRiq746aCoVRtAuTvK4-fr3DNSiv7hWaYlAsNFYnniUFz02Uc&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 208,
+  "name": "Kartoon Channel",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8",
+  "stream_icon": "https://i.imgur.com/1luzP3T.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 209,
+  "name": "Anime TV Not24/7",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://stmv1.srvif.com/animetv/animetv/playlist.m3u8",
+  "stream_icon": "https://i.imgur.com/CFSSTID.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 210,
+  "name": "Smurf TV",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://d144py1prrd7ns.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-affg2ev32s0dq/smrfe.m3u8",
+  "stream_icon": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD1300001WA_20250107T030751SQUARE.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 211,
+  "name": "ANIME ALL-DAY",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5812b7d3249444e05d09cc49/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26a781-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6903cfae-183e-4d3b-a482-b7acf38ce356",
+  "stream_icon": "https://static.wikia.nocookie.net/logopedia/images/5/59/ANIME_ALL_DAY.svg",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 212,
+  "name": "MR. BEAN CHANNEL",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://amg00627-amg00627c30-rakuten-es-3990.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanescc-rakutenes/playlist.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC_mNcWmCDVUhnblKQ3TvezJAUFXfrNW2Sfg&usqp=CAU",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 213,
+  "name": "Crunchyroll",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/65652f7fc0fc88000883537alivestitch/master.m3u8?advertisingId=channel&appName=rokuchannel&appVersion=1.0&bmodel=bm1&channel_id=channel&content=channel&content_rating=ROKU_ADS_CONTENT_RATING&content_type=livefeed&coppa=false&deviceDNT=1&deviceId=channel&deviceMake=rokuChannel&deviceModel=web&deviceType=rokuChannel&deviceVersion=1.0&embedPartner=rokuChannel&genre=ROKU_ADS_CONTENT_GENRE&is_lat=1&platform=web&rdid=channel&studio_id=viacom&tags=ROKU_CONTENT_TAGS",
+  "stream_icon": "https://1000logos.net/wp-content/uploads/2021/05/Crunchyroll-Logo-2018.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 214,
+  "name": "Jungle book",
+  "category_id": "3",
+  "stream_type": "live",
+  "stream_url": "https://cc-4bhi5osabejc9.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-4bhi5osabejc9/junglebook.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEr9-x8wGg6m0nv6MHDlPevm1jIy7aGw7x4976CQM3reKugcZxNWLJPS8&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 300,
+  "name": "SPORTS TV PLUS",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "https://rpn.bozztv.com/gusa/gusa-sporttvplus/tracks-v1a1/index.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQniPh0hyOFePNmM38IjhdsWpoPLJ4MwnQpkQ&s",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 301,
+  "name": "Bein Sports Xtra",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8",
+  "stream_icon": "https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 302,
+  "name": "Tennis TV",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "https://tennischannel-int-samsunguk.amagi.tv/playlist.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/1200px-Tennis_Channel_logo.svg.png",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 303,
+  "name": "ESPN U HD",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://85.237.89.160:9590/usa-s/ESPN-U-HD/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
+  "epg_channel_id": "ESPNUHD.us"
+},
+{
+  "stream_id": 304,
+  "name": "ESPN HD",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
+  "epg_channel_id": "ESPN.us"
+},
+{
+  "stream_id": 305,
+  "name": "ESPN2 HD",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://85.237.89.160:9590/usa-s/ESPN-2-HD/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
+  "epg_channel_id": "ESPN2.us"
+},
+{
+  "stream_id": 306,
+  "name": "YES Network",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://40.160.24.55/YES_NETWORK/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/en/7/72/YES_Network_logo.svg",
+  "epg_channel_id": "YES.us"
+},
+{
+  "stream_id": 307,
+  "name": "C-SPAN HD",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://40.160.24.52/C-SPAN_HD/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/5/53/C-SPAN_Logo.svg",
+  "epg_channel_id": "CSPAN.us"
+},
+{
+  "stream_id": 308,
+  "name": "C-SPAN 2",
+  "category_id": "4",
+  "stream_type": "live",
+  "stream_url": "http://40.160.24.52/C-SPAN_2/index.m3u8",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/5/53/C-SPAN_Logo.svg",
+  "epg_channel_id": "CSPAN2.us"
+},
+  {
+  "stream_id": 600,
+  "name": "Sky Cinema Action",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzciLCJ0cyI6MTc4NTMxMjI3MzEzN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 601,
+  "name": "Sky Cinema Hits",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzMiLCJ0cyI6MTc4NTMxMjA1Mzc3Mn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 602,
+  "name": "Sky Cinema Family",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzYiLCJ0cyI6MTc4NTMxMjE1ODUwN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 603,
+  "name": "Sky Cinema Comedy",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzgiLCJ0cyI6MTc4NTMxMjQ5NjY3N30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 604,
+  "name": "Sky Cinema Thriller",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzkiLCJ0cyI6MTc4NTMxMjYwNTI1Nn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 605,
+  "name": "Sky Cinema Sci-Fi & Horror",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2ODEiLCJ0cyI6MTc4NTMxMzQ2NTcwMH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 606,
+  "name": "Sky Cinema Drama",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2ODAiLCJ0cyI6MTc4NTMxMzYxNDg0Nn0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 607,
+  "name": "Sky Cinema Select",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzIiLCJ0cyI6MTc4NTMxMzc5NzU5NH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 608,
+  "name": "Sky Cinema Premiere",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzEiLCJ0cyI6MTc4NTMxNDEyMTEyN30",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 609,
+  "name": "Sky Cinema Animation",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2NzUiLCJ0cyI6MTc4NTMxODU2MDU3NH0",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2R_3FIkvKYlnS2JpMxEdqpr-IEyAo8RNWbY4a1w1LfWtSEjdaTK5REwQ&s=10",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 610,
+  "name": "TNT USA",
+  "category_id": "6",
+  "stream_type": "live",
+  "stream_url": "https://chunk.tvdaily.xyz/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMzgiLCJ0cyI6MTc4NTAwNTc0NTYxNn0",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/6/64/TNT_Logo_2016.svg",
+  "epg_channel_id": "TNT.us"
+}  
+  ],
+
+  "vod_categories": [
+    {
+      "category_id": "1",
+      "category_name": "🎬 New Movies Added",
+      "parent_id": 0
+          },
+    {
+      "category_id": "2",
+      "category_name": "🎬 Philippines Movies",
+      "parent_id": 0
+    },
+    {
+      "category_id": "3",
+      "category_name": "🎬 Tagalog Dubbed",
+      "parent_id": 0
+    }
+  ],
+
+  "vod_streams": [
+    {
+            "stream_id": 61101,
+      "name": "Spider Man Brand New Day (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://streamings.honor-tv.42web.io/spidemanbrandnewday2026/vod.m3u8",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/250px-Spider-Man_Brand_New_Day_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "container_extension": "m3u8"
+    },
+    {
+            "stream_id": 61102,
+      "name": "Spider Man Brand New Day HD (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://movies.honor-tv.42web.io/video/spider-man-brandnew-2026-s2",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/250px-Spider-Man_Brand_New_Day_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "container_extension": "mp4"
+    },
+    {
+            "stream_id": 61103,
+      "name": "The Eyes (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls20.cdnvideo11.shop/child/k3OEULGdXZCUMHIrUL0/720/7c03c60c979b72a337744b5f4ca0b2e9.m3u8",
+      "stream_icon": "https://images.justwatch.com/poster/346941733/s166/the-eyes-2026.jpg",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61104,
+      "name": "Colony (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls08.cdnvideo11.shop/hls08/12905/Ep1.v485_index.m3u8",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61105,
+      "name": "Obsession (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls08.cdnvideo11.shop/hls08/13229/Ep1.v129_index.m3u8",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61106,
+      "name": "The Super Mario Galaxy Movie (2026)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt28650488",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61089,
+      "name": "Straw 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://hls13.cdnvideo11.shop/hls13/STRAW-Ep1/index.m3u8?v=39b02eb5-4075-4773-9839-84d7cf81b952",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaiwIETNudF5ZLQx0cumiPhOOgGP22iAPpA&s",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61092,
+      "name": "The Surrender -(2025)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://1a-1791.com/video/fww1/0b/s8/2/b/i/V/N/biVNy.aaa.mp4",
+      "stream_icon": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS7txPDdKixhcztqpf6qxpwP9sSAnZwPjrwRMz3L-L_7xnKwpZfPvoEzJqqnAfEEWbPTjZWU1GOjoHGPFredoz6uL7oLPh4S3oZHPUcZ78",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61093,
+      "name": "Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle (2025)",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://videodelivery5.site/12193/Ep1_index.m3u8",
+      "stream_icon": "https://dam.mediacorp.sg/image/upload/s--TSyRc0KI--/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2025/03/06/demon_slayer_infinity_castle.png?itok=pXwqu0XX",
+      "container_extension": "m3u8"
+    },
+    {
+      "stream_id": 61094,
+      "name": "Superman 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt5950044",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbFIdr8-U2wTcZmlyDGClUdxh0HKyUFM9b7a9vdnZ_3Tj3MYQ6KWf0q2K&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61095,
+      "name": "Fantastic 4 - 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt10676052",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp5SH6RsqIG7nxz6QcPi0l-jSCB1wN_jh8JghfzFdk9k2fKpajTnwoCSwD&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61096,
+      "name": "The Conjuring Last Rites 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt22898462",
+      "stream_icon": "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Conjuring_%E2%80%93_Last_Rites.jpg",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61097,
+      "name": "The Elixir 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt32643830",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXXTrN75-Uz9QCCmQF07vm2y6L_1gOXJtxbvmY6Wkw3DZbwEZP_eKPTgQ&s=10",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61098,
+      "name": "The Shadow's Edge 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt34610311",
+      "stream_icon": "https://m.media-amazon.com/images/M/MV5BODM1MTNhMjMtMDYxNS00M2ZkLTkwODMtYzEwNzQ1YTFmYzJkXkEyXkFqcGc@._V1_.jpg",
+      "container_extension": "mp4"
+    },
+    {
+      "stream_id": 61099,
+      "name": "Hostile Takeover 2025",
+      "category_id": "1",
+      "stream_type": "movie",
+      "stream_url": "https://vidmody.com/vs/tt31727397",
+      "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
+      "container_extension": "mp4"
+    },
+{
+"stream_id": 6101,
+"name": "Gladiator II (2024) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://movies.honor-tv.42web.io/video/gladiator-ii-2024",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5JCMAnaFJLjDr8BulSAoNz9vUnxpV6o6_5RrXYjecCkXgqrP7xaaC_LnT&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6102,
+"name": "Enola Holmes 3 (2026) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://movies.honor-tv.42web.io/video/enola-holmes-3-2026",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4wk3O__v5_Apj-wTJ16tYiHUYUpW1vH76q8PIq8itg&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6103,
+"name": "Back in Action (2024) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia601806.us.archive.org/2/items/back-in-action-tagalog-480-p/Back%20in%20Action%20%5BTagalog%5D-480P.mp4",
+"stream_icon": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcREDnHw4A6EvYG4KrQh9ya_-HGF861xEFwktwyQQMfFpyjJmat1tMZlaC2cJ46zmELdudfEVJr4adwomDMAZAt04XbDc6xekDKAFHunSg",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6104,
+"name": "Carry-On (2024) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dl.dropboxusercontent.com/s/xv69sa6dluo5up7ec1jnd/Carry-On.2024.720p.NF.WEB-DL.AAC2.0.x265-Methy.mkv?rlkey=zbusi4mb0hzvcq45ispy1ich7&st=h7ad4vrs&dl=0",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2wHZ-uMHD6cr4Svv2cpUPKBKZgIrGwv1oP6WxHTvoJh8zxLSW_pM-0tk&s=10",
+"container_extension": "mkv"
+},
+{
+"stream_id": 6105,
+"name": "Metro (2013) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dl.dropboxusercontent.com/s/q51m4kyg5vxyr4chwaajw/Sh4dy-Metro-2013-tagdub.mp4?rlkey=y4fvzvrllvzt5btf11725mxfg&dl=0",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDnJHYNJwaINJOYNN2hbLEgPth7uzvbFuUJgFqfhsAZf7mBdJNzrvGEM&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6106,
+"name": "The Con-Heartist | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://rumble.com/hls-vod/6s11x5/playlist.m3u8?u=0&b=0",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTurRv4Km-ZFnqzBi4byj0-k3oyOmBcObT28iOo43ygMy5CzB6beS6VOz1Q&s=10",
+"container_extension": "m3u8"
+},
+{
+"stream_id": 6107,
+"name": "Back to Earth | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://rumble.com/hls-vod/6s3xwh/playlist.m3u8?u=0&b=0",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe2PjJjNDVdOjKrBmoI-O3CYzZUsTtj80qeXdynt73zh3iVvkJqWYmLt8&s=10",
+"container_extension": "m3u8"
+},
+{
+"stream_id": 6108,
+"name": "John Rambo (2008) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn721802.ca.archive.org/0/items/john-rambo-2008/John%20Rambo%20%5B2008%5D.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWBki_AU49AhDDmAeCqjd0jCgmtU4vKTjaLTIrq73B9cZq-KgUGKiYts8&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6109,
+"name": "Contract Killer (1998) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/hitman-1998-1080p-converted/Hitman%201998_1080p_converted.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmf1gBPEgFKQWdkhczH14VfRLCOovZLtZEFJIZrvrMNYWQHV_1XHutcHgV&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6110,
+"name": "Unforgettable Love (2016) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/unforgettable.-2016.-tag-dub/Unforgettable.2016.TagDub.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz1fhPM5SjQaUdqDWJ0b41ffynAnHt9PAyujEu74HnfBhpjF4vc40IZ5M&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6111,
+"name": "Dances With Dragon (1991) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/dances-with-dragon-1991-tagalog-dubbed/Dances%20With%20Dragon%20%281991%29%20%28Tagalog%20Dubbed%29.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxxUG2d2Zd2Pfpz1ku0W3VX_60Oxghqs_ue97g_S9_KcjWbpIfLDaHcnE&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6112,
+"name": "Curry and Pepper (1990) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/curry-and-pepper-1990-tagalog-dubbed/Curry%20And%20Pepper%20%281990%29%20%28Tagalog%20Dubbed%29.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9XBLB4qGj7lewRNhIDorvOLAddaQ1AzlNBMxlrqGa4zKgV0nesxD20MU&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6113,
+"name": "Ash Fall | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn721904.ca.archive.org/0/items/ash-fall-tagalog-dubbed/Ash%20Fall%20Tagalog%20Dubbed.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp9uUkbUrmQRIoY1RkOFWe0UtRkSKE27SBvuWNwntwBz7x8d2GbsZ4Qa0_&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6114,
+"name": "City Hunter | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn721802.ca.archive.org/0/items/vts-05-1_20240727_0813/VTS_05_1.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31kKEx8iwFQJDkQNKxRwqlafQ7QZDACHs8UTcwHlvPZgeQNxVZC80jao&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6115,
+"name": "Downtown Torpedoes | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia800601.us.archive.org/28/items/vts-01-2_202408/VTS_01_2.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFj-2YKO_9X6x49xgIvHzVzUHKrfGCECqZJQ&s",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6116,
+"name": "Carry On Pickpocket | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/vts-02-1_20240727/VTS_02_1.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9JDBBnrsG4T_EVheB1Zx-3x-iKZH1go8G7VaszoXXmSLMF4P6TOnRXXj&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6117,
+"name": "Who Am I? | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/vts-01-5_202408/VTS_01_5.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsnx7L7wSQN-TwcvzMJRn5RMKC5cLRcmdUW9efIkuucppCjrNsFmsRZU8V&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6118,
+"name": "Tiger Cage 2 | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://archive.org/download/vts-01-3_202408/VTS_01_3.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnJMKwXlJppAgoCig2KNZYUWRxWOo46BtuATmW2HOnOqHfrUxZxDDHFEhA&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6119,
+"name": "Fireworks | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia800306.us.archive.org/31/items/fireworks-movie-tagalog-dubbed/Fireworks%20movie_%20%28Tagalog%20dubbed%29.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU5AV3EXJ4KY95V5YEDHCYqcKyjiWIT9p3mjPk-X0T54a9KZL1fnAPUwU&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6120,
+"name": "The Great Wall | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia801503.us.archive.org/18/items/the-greatwall-tagalog-dubbed/The%20Greatwall%20Tagalog%20Dubbed.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLxYgatNe1vmyAdUdx5AUV--kUfKSuXJSEtskaMGkx1kj08FxKG9aqzYA&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6121,
+"name": "Trouble | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia601304.us.archive.org/16/items/trouble-tagalog-dubbed/Trouble%20Tagalog%20Dubbed.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJvPKxFdlkSHNjLEtUmL42yKE2Vlg8L_VTv2tehM14SaeN2kOUPqbbBo&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6122,
+"name": "Insane (2016) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia600601.us.archive.org/26/items/insane2016-tagalog-dubbed/Insane_Tagalog_Dubbed.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAwiJqy79qoleZ41-WmRtJtVxf2STj3krWKg&s",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6123,
+"name": "Kung Fu Cult Master | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia800101.us.archive.org/16/items/vts-03-1_202408/VTS_03_1.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQThslTe4YRDUDx9qfSSbcwxwd6B2xYUebNgxH2Zr_uPOcrZ2hALq0r9lmQ&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6124,
+"name": "Blitz (2011) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia801002.us.archive.org/20/items/blitz2011tagalogdubbed/Blitz%20%282011%29%20Tagalog%20Dubbed.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE5Ul0z5M-1q620JXwQC8V3C7VtBJqdD7zxQ&s",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6125,
+"name": "Alive (2020) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia801502.us.archive.org/31/items/alive_20220811/Alive.ia.mp4",
+"stream_icon": "https://upload.wikimedia.org/wikipedia/en/f/f1/Alive_2020.jpg",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6126,
+"name": "Exo Next Door | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia803209.us.archive.org/3/items/exo-next-door-tagalog-dubbed/Exo%20Next%20Door%20Tagalog%20Dubbed.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAKkSaeCuuPseKWKxDmTfuy_exJkzQ8wH4-IIy28nQdDXZgUTAX3zblOah&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6127,
+"name": "Sayko 2 (1983) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn720302.ca.archive.org/0/items/sayko-2-1983-tagalog-dubbed/Sayko%202%201983%20Tagalog%20Dubbed.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsJmkOWQakWVzRzHaujngNB2VvDCwJJJxpBYZCysBMmd4L0_kU5nM1JlWn&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6128,
+"name": "Twins | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://rumble.com/hls-vod/6sks59/playlist.m3u8",
+"stream_icon": "https://upload.wikimedia.org/wikipedia/en/6/6b/Twins_Poster.jpg",
+"container_extension": "m3u8"
+},
+{
+"stream_id": 6129,
+"name": "Fantastic Mr. Fox | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia600303.us.archive.org/24/items/fantastic-mr.-fox-tagalog-dubbed/Fantastic%20Mr.%20Fox%20%28Tagalog%20Dubbed%29.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrjrRt93lh0k_pocmabyqsLLOsBkluYa0_UjVrAOuJP0jpqCIm9rXWD8&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6130,
+"name": "Ashin of the North | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia801401.us.archive.org/24/items/ashin-of-the-north-tagalog-dubbed/Ashin%20Of%20The%20North%20Tagalog%20Dubbed.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxDlKke5DaxfoKwI5jFqVAWMFPpBnoOh4BsRfbVXuD77WBhKwSGQLxkHo&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6131,
+"name": "Byaheng Isang Daan (2016) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn720306.ca.archive.org/0/items/byaheng-isang-daan-tagalog-dubbed-2016/Byaheng%20Isang%20Daan%20Tagalog%20Dubbed%20%282016%29.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboeqXXAMAr-9alNhEpPO-u1n9HhmkWZhjNs591E6b2ibKRmygaNIiSiM&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6132,
+"name": "An American Tail (1986) | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia800100.us.archive.org/26/items/an-american-tail-1986-tagalog-dubbed/An%20American%20Tail%20%281986%29%20Tagalog%20Dubbed.ia.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT4kK-RHd7KV2KsIcNqeVhvUvSJ6AC8PVOdPZFKHHAgpx-Vas-uzlxyEVN&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6133,
+"name": "Spider-Man: Into the Spider-Verse | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://dn720305.ca.archive.org/0/items/spider-man-into-the-spider-verse-tagalog-dubbed-pinoy-movies-hub/Spider-Man%20Into%20the%20Spider-Verse%20Tagalog%20Dubbed%20-%20Pinoy%20Movies%20Hub.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhu7FIDiFAxYhhcYzn5dapmh68AnVfVVgAhOJe0FIuVdpJgQsqj7ksCoSZ&s=10",
+"container_extension": "mp4"
+},
+{
+"stream_id": 6134,
+"name": "Falling Into Your Smile | Tagalog Dubbed",
+"category_id": "3",
+"stream_type": "movie",
+"stream_url": "https://ia601006.us.archive.org/4/items/fdownloader.-net-aqnq-1-ugi-gzffs-jps-9y-2j-ap-0mv-9-vq-fmepq-pse-j-4t-hd-e-8-9-/FDownloader.Net_AQNQ1UGiGzffsJps9y2jAp0mv9VqFmepqPSeJ4tHdE8-9MEDdyu4fwUWV7qkRuRYgtqwDlnhsoj3ZvaoTKEpjQmqYSBmGfld0rDaXk_19djt2w_720p_%28HD%29.mp4",
+"stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2YsvCXtdFEr1WDe5SddtLyOa_GZ3gXPSzaew9iZDbc8XXZWwKH7iipxq&s=10",
+"container_extension": "mp4"
+},
+{
+    "stream_id": 6002,
+    "name": "KMJS Gabi ng Lagim",
+    "category_id": "2",
+    "stream_type": "movie",
+    "stream_url": "https://x4-rq1r.onrender.com/video/KMJS-gabi-ng-lagim",
+    "stream_icon": "",
+    "container_extension": "mkv"
+  }
+  ],
+
+  "series_categories": [
+    {
+      "category_id": "1",
+      "category_name": "Series",
+      "parent_id": 0
+    }
+  ],
+
+  "series": [
+    {
+      "series_id": 157041,
+      "name": "Oh My Venus Tagalog Dubbed",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOoCggdm1o6LJ-F2ZuEh4TO4dyFNZg0OynKO8ioNWjJ7Ezb-ZNMQjzNs18&s=10",
+      "plot": "Oh My Venus Tagalog Dubbed",
+      "cast": "",
+      "director": "",
+      "genre": "Drama",
+      "releaseDate": "",
+      "category_id": "1",
+
+      "seasons": [
+        {
+          "season_number": 1,
+          "name": "Season 1",
+          "episode_count": 17
+        }
+      ],
+
+      "episodes": {
+        "1": [
+          {
+            "id": 157041,
+            "episode_num": 1,
+            "title": "Oh My Venus Tagalog Dubbed S01 E01",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 1",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy01%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157042,
+            "episode_num": 2,
+            "title": "Oh My Venus Tagalog Dubbed S01 E02",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 2",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy02%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157043,
+            "episode_num": 3,
+            "title": "Oh My Venus Tagalog Dubbed S01 E03",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 3",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy03%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157044,
+            "episode_num": 4,
+            "title": "Oh My Venus Tagalog Dubbed S01 E04",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 4",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy04%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157045,
+            "episode_num": 5,
+            "title": "Oh My Venus Tagalog Dubbed S01 E05",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 5",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy05%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157046,
+            "episode_num": 6,
+            "title": "Oh My Venus Tagalog Dubbed S01 E06",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 6",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy06%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157047,
+            "episode_num": 7,
+            "title": "Oh My Venus Tagalog Dubbed S01 E07",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 7",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy07%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157048,
+            "episode_num": 8,
+            "title": "Oh My Venus Tagalog Dubbed S01 E08",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 8",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy08%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157049,
+            "episode_num": 9,
+            "title": "Oh My Venus Tagalog Dubbed S01 E09",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 9",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy09%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157050,
+            "episode_num": 10,
+            "title": "Oh My Venus Tagalog Dubbed S01 E10",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 10",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy10%20pt1%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157051,
+            "episode_num": 11,
+            "title": "Oh My Venus Tagalog Dubbed S01 E11",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 11",
+              "duration": ""
+            },
+            "stream_url": "https://ia601409.us.archive.org/24/items/ohmy-01-source/Ohmy10%20pt2%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157052,
+            "episode_num": 12,
+            "title": "Oh My Venus Tagalog Dubbed S01 E12",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 12",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy11%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157053,
+            "episode_num": 13,
+            "title": "Oh My Venus Tagalog Dubbed S01 E13",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 13",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy12%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157054,
+            "episode_num": 14,
+            "title": "Oh My Venus Tagalog Dubbed S01 E14",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 14",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy13%28240p%29.ia.mp4"
+          },
+          {
+            "id": 157055,
+            "episode_num": 15,
+            "title": "Oh My Venus Tagalog Dubbed S01 E15",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 15",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy14%20pt1%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157056,
+            "episode_num": 16,
+            "title": "Oh My Venus Tagalog Dubbed S01 E16",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 16",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy14%20pt2%28Source%29.ia.mp4"
+          },
+          {
+            "id": 157057,
+            "episode_num": 17,
+            "title": "Oh My Venus Tagalog Dubbed S01 E17",
+            "container_extension": "mp4",
+            "info": {
+              "plot": "Oh My Venus Tagalog Dubbed - Episode 17",
+              "duration": ""
+            },
+            "stream_url": "https://dn721905.ca.archive.org/0/items/ohmy-01-source/Ohmy15%20finale%28Source%29.ia.mp4"
+          }
+        ]
+      }
+    }
+  ],
+
+  "epg": []
+}
