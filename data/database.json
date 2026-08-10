@@ -5,7 +5,7 @@
       "password": "123456",
       "enabled": true,
       "exp_date": "2099-12-31T23:59:59.000Z",
-      "max_connections": 1
+      "max_connections": 10000
     }
   ],
 
