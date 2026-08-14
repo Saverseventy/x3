@@ -2279,6 +2279,267 @@
   "container_extension": "mp4"
 },   
 {
+  "stream_id": 50179,
+  "name": "The Death of Robin Hood (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt32273171",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8f4HSOrfobF-Gsafs58ZDc8gePlIvzDrWo_Z2mKJCeZdV8AEJHLFpXzM&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50180,
+  "name": "The Last House (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt32268156",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjBvs1TxuhJ59BwlNokRrRfLPi1grLc4mLEjLW3o54LA&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50181,
+  "name": "Super Girl (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt8814476",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfQNHdfSP72XlwLJV02ro-_zSXygvv9hhFB5cSlnpdA&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50182,
+  "name": "Masters of the Universe (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt0427340",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhMJjL6pZTFE92qNpa-4lNLdTOOsieEZbNAL94ZEMYI75jBMTQWZTzW-A&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50183,
+  "name": "Spider man brand new day (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "http://147.124.216.142/vod/1/2026/07/30/a8fc03747f78/index5.m3u8?wsSecret=83538485b83a2706ebb70feb0ce295a4&wsTime=6a75f07d",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRBNPetHukrorY8xN9XZtnwS7oR5mv0xOYiMCTlrv5UA&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50184,
+  "name": "Spider man brand new day hd (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt22084616/",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRBNPetHukrorY8xN9XZtnwS7oR5mv0xOYiMCTlrv5UA&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50185,
+  "name": "Toy Story 5 (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "http://147.124.216.142/vod/1/2026/07/28/fd43c07f0516/index5.m3u8?wsSecret=3798ee04be41bd9b94bc516aebfcfed6&wsTime=6a75fb0c",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv5edBsuMXlZi7wWiXIfusxFrkIQPpNRY_K5DxRQki9lnFAdyHMjz28jg&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50186,
+  "name": "The Furious (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt33311069",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT92v-TxknNEc-aoWOT4gR2IqW8ZaCCH8He5BfCcLFZ8smTUJJVxPvgR94&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50187,
+  "name": "Colony (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt34385135",
+  "stream_icon": "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50188,
+  "name": "Obsession (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls08.cdnvideo11.shop/hls08/13229/Ep1.v129_index.m3u8",
+  "stream_icon": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50189,
+  "name": "The Super Mario Galaxy Movie (2026)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt28650488",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50190,
+  "name": "Straw 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls13.cdnvideo11.shop/hls13/STRAW-Ep1/index.m3u8?v=39b02eb5-4075-4773-9839-84d7cf81b952",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaiwIETNudF5ZLQx0cumiPhOOgGP22iAPpA&s",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50191,
+  "name": "The Surrender -(2025)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://1a-1791.com/video/fww1/0b/s8/2/b/i/V/N/biVNy.aaa.mp4",
+  "stream_icon": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS7txPDdKixhcztqpf6qxpwP9sSAnZwPjrwRMz3L-L_7xnKwpZfPvoEzJqqnAfEEWbPTjZWU1GOjoHGPFredoz6uL7oLPh4S3oZHPUcZ78",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50192,
+  "name": "Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle (2025)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt32820897",
+  "stream_icon": "https://dam.mediacorp.sg/image/upload/s--TSyRc0KI--/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2025/03/06/demon_slayer_infinity_castle.png?itok=pXwqu0XX",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50193,
+  "name": "Superman 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt5950044",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbFIdr8-U2wTcZmlyDGClUdxh0HKyUFM9b7a9vdnZ_3Tj3MYQ6KWf0q2K&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50194,
+  "name": "Fantastic 4 - 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt10676052",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp5SH6RsqIG7nxz6QcPi0l-jSCB1wN_jh8JghfzFdk9k2fKpajTnwoCSwD&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50195,
+  "name": "The Conjuring Last Rites 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt22898462",
+  "stream_icon": "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Conjuring_%E2%80%93_Last_Rites.jpg",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50196,
+  "name": "The Elixir 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt32643830",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXXTrN75-Uz9QCCmQF07vm2y6L_1gOXJtxbvmY6Wkw3DZbwEZP_eKPTgQ&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50197,
+  "name": "The Shadow's Edge 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt34610311",
+  "stream_icon": "https://m.media-amazon.com/images/M/MV5BODM1MTNhMjMtMDYxNS00M2ZkLTkwODMtYzEwNzQ1YTFmYzJkXkEyXkFqcGc@._V1_.jpg",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50198,
+  "name": "Hostile Takeover 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt31727397",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-FKuAK_uaJrc5z3XqxF__sYoVluBpnaYG9eS23C1NQ&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50199,
+  "name": "Site 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt10278542",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAWTEEiYBU7j89BoqsQ-hjCJjM52EhdO-9310Nm1b8Q&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50200,
+  "name": "The Super Mario Galaxy Movie 2026",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt28650488",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLp7O-Gx2C1mceoeYOFZT8aFX4YAMyuYeIueIKJn4tY_sr2mwDBtxI40jHLc52cNamoQyShrji0f0BLkcdezPkYfCv36RJZQGYRaADBc&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50201,
+  "name": "Whistle (2025)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls13.cdnvideo11.shop/hls13/Whistle-2026-Ep1/index.m3u8?v=2af3cbc3-82dd-47ee-9d4b-2c1a95f717c7",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSydMvZnOPj6WpBOz3X9_QMq85h-BZQqVLN2ewWTjKsAQ&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50202,
+  "name": "One Last Adventure: The Making of Stranger Things 5 - 2026",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls13.cdnvideo11.shop/hls13/One-Last-Adventure-The-Making-of-Stranger-Things-5-Ep1/index.m3u8?v=dc154356-15ff-43b5-87ef-5e42931be627",
+  "stream_icon": "https://occ-0-1675-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABbBmAolyeQdSszJyl-n961Ssqho1WcW6dTmyR1hkMhQ5cvgBxdGussVtZizbPxvM1G4NQ6HSXMa2eNzx2cVqBHlkODJJt1KfjFo5Eh5ql6Qj5uvuxCuOoBzGCn4ur-hpY31Hk4IFStc2v0mV43u_y1i_5F9GmYsmnGTJjd9bWXcdt8SuY9IZj7E0mzmYvg8i4zNPBTrtp2qwk4UkvKAPfKmAPFHDmkphOQl9cuvv.jpg?r=d75",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50203,
+  "name": "My Beloved Stranger",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls13.cdnvideo11.shop/hls13/My-Beloved-Stranger-Ep1/index.m3u8?v=44859ab2-bebd-4536-b9c5-80ef92b76c05",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCxWMCpNwjFPotbNhx8urJEorN1_OyKK3_9ukS8tl6aA&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50204,
+  "name": "Mantis 2025",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls.cdnvideo11.shop/hls07/11494/Ep1.v712_index.m3u8",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUrRdSCa0PRC2SGxrCdUaze6tOnCsl8uOg6HYsg1v2qmArnrlpFxblUI8lIv5WJNzvRNULblxI_efsf1gWzJY2OCZbkhmyU4vyXJZUw&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50205,
+  "name": "My Daughter Is a Zombie",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://hls13.cdnvideo11.shop/hls13/My-Daughter-Is-a-Zombie-Ep1/index.m3u8?v=ba3109ae-f0ff-4a9d-ab1b-4a34f5e01c84",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDzCvaQ5l9CN9BqXwFE7C_PbeGwf9XD6UtIqHC1QR9sQ&s=10",
+  "container_extension": "m3u8"
+},
+{
+  "stream_id": 50206,
+  "name": "DEADPOOL AND WOLVERINE (2024)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt6263850",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeEsQjgpB3x3doduI8HjfDa4kp0i4Zenc3DMsLo19EJWPuJE-KUMNa6Rs&s=10",
+  "container_extension": "mp4"
+},
+{
+  "stream_id": 50207,
+  "name": "6 hours away (2024)",
+  "category_id": "1",
+  "stream_type": "movie",
+  "stream_url": "https://movievd.maflix.qzz.io/vs/tt22897544",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4dlmmBqabz3MLZk9NZPIAVBFV08X_xemuFW5ovWaqqcs6z7_Q6d0HPFY&s=10",
+  "container_extension": "mp4"
+},  
+{
 "stream_id": 6101,
 "name": "Gladiator II (2024) | Tagalog Dubbed",
 "category_id": "3",
