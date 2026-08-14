@@ -201,7 +201,7 @@
   "name": "DISCOVERY ASIA",
   "category_id": "1",
   "stream_type": "live",
-  "stream_url": "http://136.239.173.10:6610/001/2/ch00000090990000001334/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVXDMM&version=v1.0",
+  "stream_url": "http://136.239.173.10:6610/001/2/ch00000090990000001334/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMAqvvSnkxKfMhap8P4VuFwrV2%2FjHNuou2Jtxin49X3LQKw%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001816&contentid=ch00000000000000001816&videoid=ch00000090990000001334&recommendtype=0&userid=1996608135992&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=0WQVURILRBKFXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20453320260101155241048997&ispcode=55",
   "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_9EbZcCTMl8r_IRS6X8UOonBrjT65wzk2eQUp4VdHIhYmTGTj6f_KOqbJ&s=10",
   "epg_channel_id": ""
 },
@@ -210,7 +210,7 @@
   "name": "CGTN DOCUMENTARY",
   "category_id": "1",
   "stream_type": "live",
-  "stream_url": "http://136.239.158.30:6610/001/2/ch00000090990000001110/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMArdyomhJMtr4RuT7a45TbNMsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001253&contentid=ch00000000000000001253&videoid=ch00000090990000001110&recommendtype=0&userid=1624995133910&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=YIL44C7PHAXXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20448720260101155238186331&ispcode=55",
+  "stream_url": "http://136.239.158.30:6610/001/2/ch00000090990000001110/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMMArdyomhJMtr4RuT7a45TbNMsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001253&contentid=ch00000000000000001253&videoid=ch00000090990000001110&recommendtype=0&userid=1624995133910&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=YIL44C7PHAXXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20448720260101155238186331&ispcode=55",
   "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_9EbZcCTMl8r_IRS6X8UOonBrjT65wzk2eQUp4VdHIhYmTGTj6f_KOqbJ&s=10",
   "epg_channel_id": ""
 },
@@ -219,7 +219,7 @@
   "name": "CGTN CHANNEL",
   "category_id": "1",
   "stream_type": "live",
-  "stream_url": "http://161.49.17.2:6610/001/2/ch00000090990000001146/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMAq0bLdlQQxjquEy7BUYBE%2BOsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001316&contentid=ch00000000000000001316&videoid=ch00000090990000001146&recommendtype=0&userid=1425279458636&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=S46OQZ6HHOXXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20451820260101155238142604&ispcode=55",
+  "stream_url": "http://136.239.173.3:6610/001/2/ch00000090990000001146/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMAq0bLdlQQxjquEy7BUYBE%2BOsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001316&contentid=ch00000000000000001316&videoid=ch00000090990000001146&recommendtype=0&userid=1425279458636&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=S46OQZ6HHOXXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20451820260101155238142604&ispcode=55",
   "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_9EbZcCTMl8r_IRS6X8UOonBrjT65wzk2eQUp4VdHIhYmTGTj6f_KOqbJ&s=10",
   "epg_channel_id": ""
 },
@@ -228,7 +228,7 @@
   "name": "CHANNEL NEWS ASIA",
   "category_id": "1",
   "stream_type": "live",
-  "stream_url": "http://136.239.173.3:6610/001/2/ch00000090990000001106/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDM%2BqhARVluhpunJiYdQ%2BUDM8fsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001181&contentid=ch00000000000000001181&videoid=ch00000090990000001106&recommendtype=0&userid=1659725106067&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=WL3Z4DGO41EXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20451820260101155237142593&ispcode=55",
+  "stream_url": "http://136.239.173.3:6610/001/2/ch00000090990000001106/index.m3u8?AuthInfo=v87HD9rEhwHiAdYyrP20TsXah2%2FZLFNNIdWrVrXDMAqhARVluhpunJiYdQ%2BUDM8fsyK4TH4mOENKJ45mwOyS0g%3D%3D&version=v1.0&BreakPoint=0&virtualDomain=001.live_hls.zte.com&programid=ch00000000000000001181&contentid=ch00000000000000001181&videoid=ch00000090990000001106&recommendtype=0&userid=1659725106067&boid=001&stbid=02%3A00%3A00%3A00%3A00%3A00&terminalflag=1&profilecode=&usersessionid=WL3Z4DGO41EXXX&NeedJITP=1&JITPMediaType=NO&JITPDRMType=NO&IASHttpSessionId=RR20451820260101155237142593&ispcode=55",
   "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_9EbZcCTMl8r_IRS6X8UOonBrjT65wzk2eQUp4VdHIhYmTGTj6f_KOqbJ&s=10",
   "epg_channel_id": ""
 },
