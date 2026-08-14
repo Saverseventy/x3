@@ -48,7 +48,7 @@
       "name": "ALLTV2",
       "category_id": "1",
       "stream_type": "live",
-      "stream_url": "https://test-paid.honor-tv-ph.workers.dev/playlist1.m3u",
+      "stream_url": "https://vp.freetvs.workers.dev/kmjs",
       "stream_icon": "https://i.imgur.com/LFgDPhN.png",
       "epg_channel_id": "AllTV.ph@SD"
     },
