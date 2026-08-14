@@ -124,6 +124,60 @@
       "stream_icon": "https://i.imgur.com/rGAOD3f.png",
       "epg_channel_id": "CineMo.ph@SD"
     },
+    {
+  "stream_id": 80,
+  "name": "SMMC TV",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://startelevisionmmcdi.sanmateocable1.workers.dev/smmctv/alltv-master/live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 81,
+  "name": "BIGSCREEN TV",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://bigscreentv.itunerworldwide.workers.dev/master.live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 82,
+  "name": "EPIC ONE TV",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://epiconetv.itunerworldwide.workers.dev/master.live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 83,
+  "name": "SOUTH STAR TV",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://southstartv.itunerworldwide.workers.dev/master.live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 84,
+  "name": "PTN",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://ptnglobal.sanmateocable.workers.dev/master.live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
+{
+  "stream_id": 85,
+  "name": "ASIA FLIX TV",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://asiaflixtvph.itunerworldwide.workers.dev/master.live.m3u8",
+  "stream_icon": "",
+  "epg_channel_id": ""
+},
 {
   "stream_id": 100,
   "name": "ACTION HOLLYWOOD MOVIES",
