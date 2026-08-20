@@ -124,8 +124,16 @@
       "stream_icon": "https://i.imgur.com/rGAOD3f.png",
       "epg_channel_id": "CineMo.ph@SD"
     },
-
   {
+            "stream_id": 700100,
+  "name": "Kapamilya Channel HD",
+  "category_id": "1",
+  "stream_type": "live",
+  "stream_url": "https://cnv.freetvs.workers.dev/kapamilyahd",
+  "stream_icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3CRHXQu8yrDbM0zQhutcRdX9Qzd-gRASFywODz7cJBABx6_uqMQe5dWg&s=10",
+  "epg_channel_id": "bsfuji"
+  },
+    {
     "stream_id": 70009,
     "name": "BBC News",
     "category_id": "1",
@@ -945,7 +953,7 @@
   "epg_channel_id": "tvmaria"
 },
 {
-  "stream_id": 700100,
+  "stream_id": 700101,
   "name": "BS Fuji",
   "category_id": "1",
   "stream_type": "live",
