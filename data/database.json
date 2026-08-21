@@ -42,25 +42,7 @@
     }
   ],
 
-  "live_streams": [
-    {
-      "stream_id": 1,
-      "name": "ALLTV2",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/alltv/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/LFgDPhN.png",
-      "epg_channel_id": "AllTV.ph@SD"
-    },
-    {
-      "stream_id": 2,
-      "name": "TV5",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/tv5/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/PYJhTiq.png",
-      "epg_channel_id": "TV5.ph@SD"
-    },
+  "live_streams": [    
     {
       "stream_id": 3,
       "name": "CCTN",
@@ -78,51 +60,6 @@
       "stream_url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
       "stream_icon": "https://i.imgur.com/IUcTFQ2.png",
       "epg_channel_id": "CLTV36.ph@SD"
-    },
-    {
-      "stream_id": 5,
-      "name": "GTV",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/gtv/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/rWhamwh.png",
-      "epg_channel_id": "GTV.ph@SD"
-    },
-    {
-      "stream_id": 6,
-      "name": "IBC 13",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/ibc_13/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/1KaTUOo.png",
-      "epg_channel_id": "IBC13.ph@SD"
-    },
-    {
-      "stream_id": 7,
-      "name": "Jeepney TV",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/jeepney/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/RNxfhcc.png",
-      "epg_channel_id": "JeepneyTV.ph@SD"
-    },
-    {
-      "stream_id": 8,
-      "name": "RPTV",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/rptv/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/ZgSEwq9.png",
-      "epg_channel_id": "RPTV.ph@SD"
-    },
-    {
-      "stream_id": 60,
-      "name": "Cinemo",
-      "category_id": "1",
-      "stream_type": "live",
-      "stream_url": "https://streams.comclark.com/pknsd/cinemo/playlist.m3u8",
-      "stream_icon": "https://i.imgur.com/rGAOD3f.png",
-      "epg_channel_id": "CineMo.ph@SD"
     },
   {
             "stream_id": 700100,
